@@ -1,0 +1,1246 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="Learn more about StyleHub and our fashion story.">
+
+    <title>About Us | StyleHub</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Playfair+Display:wght@500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- Main CSS -->
+    <link rel="stylesheet"
+          href="css/style.css">
+
+
+    <style>
+
+        /* =====================================
+           ABOUT PAGE
+        ===================================== */
+
+        .about-section {
+            background: #f8f3f4;
+        }
+
+
+        /* =====================================
+           HERO
+        ===================================== */
+
+        .about-hero {
+            min-height: 500px;
+            display: flex;
+            align-items: center;
+            position: relative;
+            background:
+                linear-gradient(
+                    rgba(26, 26, 46, 0.58),
+                    rgba(26, 26, 46, 0.72)
+                ),
+                url("images/about-hero.jpg")
+                center / cover no-repeat;
+        }
+
+
+        .about-hero-content {
+            max-width: 650px;
+            color: #ffffff;
+        }
+
+
+        .about-hero-content span {
+            color: #e4c766;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
+
+        .about-hero-content h1 {
+            font-family: "Playfair Display", serif;
+            font-size: clamp(45px, 7vw, 75px);
+            line-height: 1.05;
+            margin: 12px 0 18px;
+        }
+
+
+        .about-hero-content p {
+            max-width: 550px;
+            color: rgba(255,255,255,0.78);
+            font-size: 12px;
+            line-height: 1.9;
+        }
+
+
+        /* =====================================
+           OUR STORY
+        ===================================== */
+
+        .story-section {
+            padding: 90px 0;
+            background: #ffffff;
+        }
+
+
+        .story-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 65px;
+            align-items: center;
+        }
+
+
+        .story-image {
+            height: 520px;
+            overflow: hidden;
+            background: #e9e1e3;
+        }
+
+
+        .story-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+
+        .story-content span {
+            color: #c9a227;
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+
+        .story-content h2 {
+            font-family: "Playfair Display", serif;
+            font-size: clamp(35px, 5vw, 50px);
+            line-height: 1.1;
+            margin: 12px 0 20px;
+        }
+
+
+        .story-content p {
+            color: #777;
+            font-size: 11px;
+            line-height: 2;
+            margin-bottom: 15px;
+        }
+
+
+        .story-highlight {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+
+        .story-stat {
+            padding: 18px;
+            background: #f8f3f4;
+            text-align: center;
+        }
+
+
+        .story-stat strong {
+            display: block;
+            color: #1a1a2e;
+            font-family: "Playfair Display", serif;
+            font-size: 25px;
+        }
+
+
+        .story-stat span {
+            color: #777;
+            font-size: 8px;
+            letter-spacing: 0;
+        }
+
+
+        /* =====================================
+           VALUES
+        ===================================== */
+
+        .values-section {
+            padding: 90px 0;
+            background: #f8f3f4;
+        }
+
+
+        .section-heading {
+            max-width: 600px;
+            margin: 0 auto 45px;
+            text-align: center;
+        }
+
+
+        .section-heading span {
+            color: #c9a227;
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+
+        .section-heading h2 {
+            font-family: "Playfair Display", serif;
+            font-size: clamp(35px, 5vw, 50px);
+            margin: 10px 0;
+        }
+
+
+        .section-heading p {
+            color: #777;
+            font-size: 11px;
+            line-height: 1.8;
+        }
+
+
+        .values-grid {
+            display: grid;
+            grid-template-columns:
+                repeat(4, 1fr);
+            gap: 18px;
+        }
+
+
+        .value-card {
+            padding: 35px 25px;
+            text-align: center;
+            background: #ffffff;
+            border: 1px solid #e5e5e5;
+            transition: 0.3s ease;
+        }
+
+
+        .value-card:hover {
+            transform: translateY(-6px);
+            border-color: #c9a227;
+        }
+
+
+        .value-icon {
+            width: 55px;
+            height: 55px;
+            display: grid;
+            place-items: center;
+            margin: 0 auto 20px;
+            border-radius: 50%;
+            background: #f8f3f4;
+            color: #c9a227;
+            font-size: 20px;
+        }
+
+
+        .value-card h3 {
+            font-family: "Playfair Display", serif;
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+
+        .value-card p {
+            color: #777;
+            font-size: 10px;
+            line-height: 1.8;
+        }
+
+
+        /* =====================================
+           WHY STYLEHUB
+        ===================================== */
+
+        .why-section {
+            padding: 90px 0;
+            background: #ffffff;
+        }
+
+
+        .why-grid {
+            display: grid;
+            grid-template-columns:
+                repeat(3, 1fr);
+            gap: 25px;
+        }
+
+
+        .why-card {
+            padding: 30px;
+            border: 1px solid #e5e5e5;
+        }
+
+
+        .why-number {
+            color: #c9a227;
+            font-family: "Playfair Display", serif;
+            font-size: 35px;
+            font-weight: 700;
+        }
+
+
+        .why-card h3 {
+            font-family: "Playfair Display", serif;
+            font-size: 22px;
+            margin: 12px 0;
+        }
+
+
+        .why-card p {
+            color: #777;
+            font-size: 10px;
+            line-height: 1.8;
+        }
+
+
+        /* =====================================
+           CTA
+        ===================================== */
+
+        .about-cta {
+            padding: 90px 20px;
+            background: #1a1a2e;
+            text-align: center;
+            color: #ffffff;
+        }
+
+
+        .about-cta span {
+            color: #e4c766;
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 2px;
+        }
+
+
+        .about-cta h2 {
+            font-family: "Playfair Display", serif;
+            font-size: clamp(35px, 5vw, 50px);
+            margin: 12px 0;
+        }
+
+
+        .about-cta p {
+            max-width: 550px;
+            margin: 0 auto 25px;
+            color: rgba(255,255,255,0.7);
+            font-size: 11px;
+            line-height: 1.8;
+        }
+
+
+        .about-cta-btn {
+            display: inline-block;
+            padding: 14px 28px;
+            background: #c9a227;
+            color: #ffffff;
+            font-size: 10px;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+
+        .about-cta-btn:hover {
+            background: #ffffff;
+            color: #1a1a2e;
+        }
+
+
+        /* =====================================
+           RESPONSIVE
+        ===================================== */
+
+        @media (max-width: 900px) {
+
+            .story-grid {
+                grid-template-columns: 1fr;
+                gap: 35px;
+            }
+
+
+            .story-image {
+                height: 400px;
+            }
+
+
+            .values-grid {
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+
+
+            .why-grid {
+                grid-template-columns: 1fr;
+            }
+
+        }
+
+
+        @media (max-width: 600px) {
+
+            .about-hero {
+                min-height: 420px;
+            }
+
+
+            .story-section,
+            .values-section,
+            .why-section {
+                padding: 60px 0;
+            }
+
+
+            .story-image {
+                height: 320px;
+            }
+
+
+            .story-highlight {
+                grid-template-columns: 1fr;
+            }
+
+
+            .values-grid {
+                grid-template-columns: 1fr;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================
+         HEADER
+    ====================================== -->
+
+    <header class="header">
+
+        <div class="container navbar">
+
+
+            <!-- Logo -->
+
+            <a href="index.html"
+               class="logo">
+
+                <span class="logo-icon">
+                    <i class="fa-solid fa-shirt"></i>
+                </span>
+
+                <span class="logo-text">
+                    Style<span>Hub</span>
+                </span>
+
+            </a>
+
+
+            <!-- Navigation -->
+
+            <nav class="nav-menu">
+
+                <a href="index.html"
+                   class="nav-link">
+                    Home
+                </a>
+
+                <a
+                    href="products.html?category=men"
+                    class="nav-link">
+                    Men
+                </a>
+
+                <a
+                    href="products.html?category=women"
+                    class="nav-link">
+                    Women
+                </a>
+
+                <a
+                    href="products.html?category=kids"
+                    class="nav-link">
+                    Kids
+                </a>
+
+                <a href="about.html"
+                   class="nav-link active">
+                    About
+                </a>
+
+                <a href="contact.html"
+                   class="nav-link">
+                    Contact
+                </a>
+
+            </nav>
+
+
+            <!-- Actions -->
+
+            <div class="nav-actions">
+
+                <a href="products.html"
+                   class="nav-icon">
+
+                    <i class="fa-solid fa-magnifying-glass"></i>
+
+                </a>
+
+
+                <a href="login.html"
+                   class="nav-icon">
+
+                    <i class="fa-regular fa-user"></i>
+
+                </a>
+
+
+                <a
+                    href="account.html#wishlist"
+                    class="nav-icon">
+
+                    <i class="fa-regular fa-heart"></i>
+
+                    <span class="icon-count"
+                          id="wishlist-count">
+                        0
+                    </span>
+
+                </a>
+
+
+                <a href="cart.html"
+                   class="nav-icon">
+
+                    <i class="fa-solid fa-bag-shopping"></i>
+
+                    <span class="icon-count"
+                          id="cart-count">
+                        0
+                    </span>
+
+                </a>
+
+
+                <button
+                    class="menu-toggle"
+                    id="menu-toggle">
+
+                    <i class="fa-solid fa-bars"></i>
+
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- Mobile Menu -->
+
+        <div
+            class="mobile-menu"
+            id="mobile-menu">
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="products.html?category=men">
+                Men
+            </a>
+
+            <a href="products.html?category=women">
+                Women
+            </a>
+
+            <a href="products.html?category=kids">
+                Kids
+            </a>
+
+            <a href="about.html">
+                About
+            </a>
+
+            <a href="contact.html">
+                Contact
+            </a>
+
+            <a href="login.html">
+                Login
+            </a>
+
+            <a href="cart.html">
+                Shopping Cart
+            </a>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =====================================
+         ABOUT HERO
+    ====================================== -->
+
+    <main>
+
+        <section class="about-section">
+
+
+            <div class="about-hero">
+
+                <div class="container">
+
+                    <div class="about-hero-content">
+
+                        <span>
+                            OUR STORY
+                        </span>
+
+                        <h1>
+                            Fashion Made<br>
+                            For You.
+                        </h1>
+
+                        <p>
+                            StyleHub is a modern fashion
+                            destination created for people
+                            who believe that what you wear
+                            is an expression of who you are.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =================================
+                 STORY
+            ================================== -->
+
+            <section class="story-section">
+
+                <div class="container">
+
+                    <div class="story-grid">
+
+
+                        <!-- Image -->
+
+                        <div class="story-image">
+
+                            <img
+                                src="images/about-hero.jpg"
+                                alt="StyleHub fashion collection"
+                                loading="lazy">
+
+                        </div>
+
+
+                        <!-- Content -->
+
+                        <div class="story-content">
+
+                            <span>
+                                ABOUT STYLEHUB
+                            </span>
+
+                            <h2>
+                                More Than<br>
+                                Just Fashion
+                            </h2>
+
+                            <p>
+                                StyleHub was created with
+                                one simple idea — fashion
+                                should feel personal,
+                                accessible and effortless.
+                            </p>
+
+                            <p>
+                                From everyday essentials to
+                                statement pieces, we carefully
+                                curate collections that help
+                                you express your individuality
+                                with confidence.
+                            </p>
+
+                            <p>
+                                We combine timeless design,
+                                modern trends and comfortable
+                                materials to create fashion
+                                that fits naturally into your
+                                everyday life.
+                            </p>
+
+
+                            <div class="story-highlight">
+
+                                <div class="story-stat">
+
+                                    <strong>
+                                        10K+
+                                    </strong>
+
+                                    <span>
+                                        Happy Customers
+                                    </span>
+
+                                </div>
+
+
+                                <div class="story-stat">
+
+                                    <strong>
+                                        500+
+                                    </strong>
+
+                                    <span>
+                                        Products
+                                    </span>
+
+                                </div>
+
+
+                                <div class="story-stat">
+
+                                    <strong>
+                                        4.8/5
+                                    </strong>
+
+                                    <span>
+                                        Customer Rating
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =================================
+                 VALUES
+            ================================== -->
+
+            <section class="values-section">
+
+                <div class="container">
+
+
+                    <div class="section-heading">
+
+                        <span>
+                            WHAT WE BELIEVE
+                        </span>
+
+                        <h2>
+                            Our Values
+                        </h2>
+
+                        <p>
+                            Everything we do is guided by
+                            the values that make StyleHub
+                            special.
+                        </p>
+
+                    </div>
+
+
+                    <div class="values-grid">
+
+
+                        <!-- Value 1 -->
+
+                        <div class="value-card">
+
+                            <div class="value-icon">
+
+                                <i class="fa-solid fa-gem"></i>
+
+                            </div>
+
+                            <h3>
+                                Quality
+                            </h3>
+
+                            <p>
+                                We focus on quality materials,
+                                thoughtful details and products
+                                designed to last.
+                            </p>
+
+                        </div>
+
+
+                        <!-- Value 2 -->
+
+                        <div class="value-card">
+
+                            <div class="value-icon">
+
+                                <i class="fa-solid fa-heart"></i>
+
+                            </div>
+
+                            <h3>
+                                Customer First
+                            </h3>
+
+                            <p>
+                                Our customers are at the heart
+                                of every decision we make.
+                            </p>
+
+                        </div>
+
+
+                        <!-- Value 3 -->
+
+                        <div class="value-card">
+
+                            <div class="value-icon">
+
+                                <i class="fa-solid fa-leaf"></i>
+
+                            </div>
+
+                            <h3>
+                                Responsibility
+                            </h3>
+
+                            <p>
+                                We believe in making thoughtful
+                                choices for people and the
+                                environment.
+                            </p>
+
+                        </div>
+
+
+                        <!-- Value 4 -->
+
+                        <div class="value-card">
+
+                            <div class="value-icon">
+
+                                <i class="fa-solid fa-lightbulb"></i>
+
+                            </div>
+
+                            <h3>
+                                Innovation
+                            </h3>
+
+                            <p>
+                                We continuously explore new
+                                ideas to make your shopping
+                                experience better.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =================================
+                 WHY STYLEHUB
+            ================================== -->
+
+            <section class="why-section">
+
+                <div class="container">
+
+
+                    <div class="section-heading">
+
+                        <span>
+                            WHY CHOOSE US
+                        </span>
+
+                        <h2>
+                            The StyleHub Difference
+                        </h2>
+
+                        <p>
+                            We make fashion shopping simple,
+                            inspiring and enjoyable.
+                        </p>
+
+                    </div>
+
+
+                    <div class="why-grid">
+
+
+                        <div class="why-card">
+
+                            <div class="why-number">
+                                01
+                            </div>
+
+                            <h3>
+                                Curated Collections
+                            </h3>
+
+                            <p>
+                                Every collection is carefully
+                                selected to bring together
+                                current trends and timeless
+                                essentials.
+                            </p>
+
+                        </div>
+
+
+                        <div class="why-card">
+
+                            <div class="why-number">
+                                02
+                            </div>
+
+                            <h3>
+                                Easy Shopping
+                            </h3>
+
+                            <p>
+                                Browse products, save your
+                                favorites, add them to your
+                                cart and checkout with ease.
+                            </p>
+
+                        </div>
+
+
+                        <div class="why-card">
+
+                            <div class="why-number">
+                                03
+                            </div>
+
+                            <h3>
+                                Made For Everyone
+                            </h3>
+
+                            <p>
+                                Our collections are designed
+                                to offer stylish options for
+                                men, women and kids.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =================================
+                 CTA
+            ================================== -->
+
+            <section class="about-cta">
+
+                <div class="container">
+
+                    <span>
+                        FIND YOUR STYLE
+                    </span>
+
+                    <h2>
+                        Ready To Discover<br>
+                        Your Next Look?
+                    </h2>
+
+                    <p>
+                        Explore our latest collections and
+                        find pieces that feel uniquely you.
+                    </p>
+
+                    <a
+                        href="products.html"
+                        class="about-cta-btn">
+
+                        Shop Now
+
+                    </a>
+
+                </div>
+
+            </section>
+
+        </section>
+
+    </main>
+
+
+
+    <!-- =====================================
+         FOOTER
+    ====================================== -->
+
+    <footer class="footer">
+
+        <div class="container footer-grid">
+
+
+            <div class="footer-brand">
+
+                <a
+                    href="index.html"
+                    class="logo footer-logo">
+
+                    <span class="logo-icon">
+                        <i class="fa-solid fa-shirt"></i>
+                    </span>
+
+                    <span class="logo-text">
+                        Style<span>Hub</span>
+                    </span>
+
+                </a>
+
+                <p>
+                    Your destination for modern,
+                    stylish and comfortable fashion.
+                </p>
+
+
+                <div class="social-links">
+
+                    <a href="#">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+
+                    <a href="#">
+                        <i class="fa-brands fa-facebook-f"></i>
+                    </a>
+
+                    <a href="#">
+                        <i class="fa-brands fa-pinterest-p"></i>
+                    </a>
+
+                    <a href="#">
+                        <i class="fa-brands fa-x-twitter"></i>
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h3>
+                    Shop
+                </h3>
+
+                <a href="products.html?category=men">
+                    Men
+                </a>
+
+                <a href="products.html?category=women">
+                    Women
+                </a>
+
+                <a href="products.html?category=kids">
+                    Kids
+                </a>
+
+                <a href="products.html">
+                    New Arrivals
+                </a>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h3>
+                    Customer Care
+                </h3>
+
+                <a href="contact.html">
+                    Contact Us
+                </a>
+
+                <a href="account.html">
+                    My Account
+                </a>
+
+                <a href="cart.html">
+                    Shopping Cart
+                </a>
+
+                <a href="checkout.html">
+                    Checkout
+                </a>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h3>
+                    Contact
+                </h3>
+
+                <p>
+                    <i class="fa-solid fa-location-dot"></i>
+                    Chennai, Tamil Nadu
+                </p>
+
+                <p>
+                    <i class="fa-solid fa-phone"></i>
+                    +91 98765 43210
+                </p>
+
+                <p>
+                    <i class="fa-solid fa-envelope"></i>
+                    support@stylehub.com
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <div class="container footer-bottom-content">
+
+                <p>
+                    © 2026 StyleHub. All Rights Reserved.
+                </p>
+
+                <div>
+
+                    <a href="#">
+                        Privacy Policy
+                    </a>
+
+                    <a href="#">
+                        Terms & Conditions
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+
+    <!-- =====================================
+         JAVASCRIPT
+    ====================================== -->
+
+    <script src="js/products.js"></script>
+    <script src="js/cart.js"></script>
+    <script src="js/script.js"></script>
+
+
+    <script>
+
+        // =====================================
+        // WISHLIST COUNT
+        // =====================================
+
+        function updateAboutWishlistCount() {
+
+            const wishlist =
+                JSON.parse(
+                    localStorage.getItem(
+                        "stylehubWishlist"
+                    )
+                ) || [];
+
+
+            const count =
+                document.getElementById(
+                    "wishlist-count"
+                );
+
+
+            if (count) {
+
+                count.textContent =
+                    wishlist.length;
+
+            }
+
+        }
+
+
+        updateAboutWishlistCount();
+
+
+        // =====================================
+        // CART COUNT
+        // =====================================
+
+        if (
+            typeof updateCartCount ===
+            "function"
+        ) {
+
+            updateCartCount();
+
+        }
+
+    </script>
+
+</body>
+
+</html>
