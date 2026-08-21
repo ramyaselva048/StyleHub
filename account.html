@@ -1,0 +1,2227 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="Manage your StyleHub account, orders and wishlist.">
+
+    <title>My Account | StyleHub</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Playfair+Display:wght@500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- Main CSS -->
+    <link rel="stylesheet"
+          href="css/style.css">
+
+
+    <style>
+
+        /* =====================================
+           ACCOUNT PAGE
+        ===================================== */
+
+        .account-section {
+            padding: 70px 0 100px;
+            background: #f8f3f4;
+            min-height: 70vh;
+        }
+
+
+        /* Heading */
+
+        .account-heading {
+            text-align: center;
+            margin-bottom: 45px;
+        }
+
+        .account-heading span {
+            color: #c9a227;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .account-heading h1 {
+            font-family: "Playfair Display", serif;
+            font-size: clamp(40px, 5vw, 55px);
+            margin: 8px 0;
+        }
+
+        .account-heading p {
+            color: #777;
+            font-size: 12px;
+        }
+
+
+        /* =====================================
+           ACCOUNT LAYOUT
+        ===================================== */
+
+        .account-layout {
+            display: grid;
+            grid-template-columns: 240px 1fr;
+            gap: 25px;
+            align-items: start;
+        }
+
+
+        /* =====================================
+           SIDEBAR
+        ===================================== */
+
+        .account-sidebar {
+            background: #ffffff;
+            border: 1px solid #e5e5e5;
+        }
+
+
+        .profile-mini {
+            padding: 25px 20px;
+            text-align: center;
+            border-bottom: 1px solid #e5e5e5;
+        }
+
+
+        .profile-avatar {
+            width: 70px;
+            height: 70px;
+            display: grid;
+            place-items: center;
+            margin: 0 auto 12px;
+            border-radius: 50%;
+            background: #1a1a2e;
+            color: #ffffff;
+            font-size: 25px;
+        }
+
+
+        .profile-mini h3 {
+            font-family: "Playfair Display", serif;
+            font-size: 18px;
+            margin-bottom: 4px;
+        }
+
+
+        .profile-mini p {
+            color: #999;
+            font-size: 9px;
+            word-break: break-word;
+        }
+
+
+        /* Sidebar Navigation */
+
+        .account-nav {
+            padding: 10px 0;
+        }
+
+
+        .account-nav button {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 14px 20px;
+            border: 0;
+            border-left: 3px solid transparent;
+            background: transparent;
+            color: #555;
+            text-align: left;
+            font-family: "Montserrat", sans-serif;
+            font-size: 10px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.3s ease;
+        }
+
+
+        .account-nav button:hover,
+        .account-nav button.active {
+            background: #f8f3f4;
+            border-left-color: #c9a227;
+            color: #1a1a2e;
+        }
+
+
+        .account-nav button i {
+            width: 16px;
+            color: #c9a227;
+        }
+
+
+        .logout-nav {
+            color: #c0392b !important;
+        }
+
+
+        .logout-nav i {
+            color: #c0392b !important;
+        }
+
+
+        /* =====================================
+           ACCOUNT CONTENT
+        ===================================== */
+
+        .account-content {
+            min-width: 0;
+        }
+
+
+        .account-tab {
+            display: none;
+            background: #ffffff;
+            border: 1px solid #e5e5e5;
+            padding: 30px;
+        }
+
+
+        .account-tab.active {
+            display: block;
+        }
+
+
+        .tab-title {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+
+
+        .tab-title h2 {
+            font-family: "Playfair Display", serif;
+            font-size: 28px;
+        }
+
+
+        .tab-title p {
+            color: #999;
+            font-size: 10px;
+        }
+
+
+        /* =====================================
+           PROFILE
+        ===================================== */
+
+        .profile-form {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 18px;
+        }
+
+
+        .profile-form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+
+        .profile-form-group.full {
+            grid-column: 1 / -1;
+        }
+
+
+        .profile-form-group label {
+            margin-bottom: 7px;
+            font-size: 10px;
+            font-weight: 700;
+        }
+
+
+        .profile-form-group input,
+        .profile-form-group textarea {
+            width: 100%;
+            box-sizing: border-box;
+            padding: 13px;
+            border: 1px solid #ddd;
+            outline: none;
+            font-family: "Montserrat", sans-serif;
+            font-size: 11px;
+        }
+
+
+        .profile-form-group textarea {
+            min-height: 90px;
+            resize: vertical;
+        }
+
+
+        .profile-form-group input:focus,
+        .profile-form-group textarea:focus {
+            border-color: #c9a227;
+        }
+
+
+        .save-profile-btn {
+            grid-column: 1 / -1;
+            width: fit-content;
+            padding: 13px 25px;
+            border: 0;
+            background: #1a1a2e;
+            color: #ffffff;
+            font-size: 10px;
+            font-weight: 700;
+            text-transform: uppercase;
+            cursor: pointer;
+        }
+
+
+        .save-profile-btn:hover {
+            background: #c9a227;
+        }
+
+
+        /* =====================================
+           ORDERS
+        ===================================== */
+
+        .order-card {
+            padding: 20px;
+            margin-bottom: 15px;
+            border: 1px solid #e5e5e5;
+        }
+
+
+        .order-card:last-child {
+            margin-bottom: 0;
+        }
+
+
+        .order-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 15px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid #eeeeee;
+        }
+
+
+        .order-id {
+            font-size: 11px;
+            font-weight: 700;
+        }
+
+
+        .order-date {
+            color: #999;
+            font-size: 9px;
+        }
+
+
+        .order-status {
+            padding: 5px 9px;
+            background: #f1fff5;
+            color: #267a43;
+            font-size: 8px;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+
+        .order-body {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            padding-top: 15px;
+        }
+
+
+        .order-items {
+            color: #777;
+            font-size: 10px;
+            line-height: 1.7;
+        }
+
+
+        .order-total {
+            font-size: 14px;
+            font-weight: 700;
+            white-space: nowrap;
+        }
+
+
+        /* =====================================
+           WISHLIST
+        ===================================== */
+
+        .wishlist-grid {
+            display: grid;
+            grid-template-columns:
+                repeat(3, minmax(0, 1fr));
+            gap: 18px;
+        }
+
+
+        .wishlist-item {
+            border: 1px solid #e5e5e5;
+            overflow: hidden;
+        }
+
+
+        .wishlist-image {
+            height: 220px;
+            background: #e9e1e3;
+            overflow: hidden;
+        }
+
+
+        .wishlist-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+
+        .wishlist-info {
+            padding: 15px;
+        }
+
+
+        .wishlist-info h3 {
+            font-family: "Playfair Display", serif;
+            font-size: 16px;
+            margin-bottom: 6px;
+        }
+
+
+        .wishlist-info p {
+            color: #c9a227;
+            font-size: 12px;
+            font-weight: 700;
+        }
+
+
+        .wishlist-actions {
+            display: flex;
+            gap: 7px;
+            margin-top: 12px;
+        }
+
+
+        .wishlist-actions button {
+            flex: 1;
+            padding: 9px;
+            border: 1px solid #ddd;
+            background: #ffffff;
+            cursor: pointer;
+            font-size: 9px;
+            font-weight: 600;
+        }
+
+
+        .wishlist-actions button:hover {
+            border-color: #c9a227;
+        }
+
+
+        /* =====================================
+           ADDRESS
+        ===================================== */
+
+        .address-card {
+            padding: 20px;
+            border: 1px solid #e5e5e5;
+            margin-bottom: 15px;
+        }
+
+
+        .address-card h3 {
+            font-family: "Playfair Display", serif;
+            font-size: 18px;
+            margin-bottom: 8px;
+        }
+
+
+        .address-card p {
+            color: #777;
+            font-size: 10px;
+            line-height: 1.8;
+        }
+
+
+        .address-badge {
+            display: inline-block;
+            margin-bottom: 10px;
+            padding: 5px 8px;
+            background: #f8f3f4;
+            color: #c9a227;
+            font-size: 8px;
+            font-weight: 700;
+        }
+
+
+        /* =====================================
+           EMPTY
+        ===================================== */
+
+        .account-empty {
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+
+        .account-empty i {
+            display: block;
+            margin-bottom: 15px;
+            color: #c9a227;
+            font-size: 35px;
+        }
+
+
+        .account-empty h3 {
+            font-family: "Playfair Display", serif;
+            font-size: 24px;
+            margin-bottom: 8px;
+        }
+
+
+        .account-empty p {
+            color: #999;
+            font-size: 10px;
+            margin-bottom: 20px;
+        }
+
+
+        .shop-btn {
+            display: inline-block;
+            padding: 12px 22px;
+            background: #1a1a2e;
+            color: #ffffff;
+            font-size: 10px;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+
+        .shop-btn:hover {
+            background: #c9a227;
+        }
+
+
+        /* =====================================
+           TOAST
+        ===================================== */
+
+        .account-toast {
+            position: fixed;
+            right: 25px;
+            bottom: 25px;
+            z-index: 9999;
+            padding: 13px 18px;
+            background: #1a1a2e;
+            color: #ffffff;
+            font-size: 10px;
+            transform: translateY(100px);
+            opacity: 0;
+            transition: 0.3s ease;
+        }
+
+
+        .account-toast.show {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+
+        /* =====================================
+           RESPONSIVE
+        ===================================== */
+
+        @media (max-width: 900px) {
+
+            .account-layout {
+                grid-template-columns: 1fr;
+            }
+
+
+            .account-sidebar {
+                display: grid;
+                grid-template-columns: 1fr;
+            }
+
+
+            .account-nav {
+                display: grid;
+                grid-template-columns:
+                    repeat(3, 1fr);
+            }
+
+
+            .account-nav button {
+                justify-content: center;
+                border-left: 0;
+                border-bottom: 3px solid transparent;
+                text-align: center;
+                flex-direction: column;
+                gap: 5px;
+            }
+
+
+            .account-nav button:hover,
+            .account-nav button.active {
+                border-left: 0;
+                border-bottom-color: #c9a227;
+            }
+
+
+            .wishlist-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+        }
+
+
+        @media (max-width: 600px) {
+
+            .account-section {
+                padding: 50px 0 70px;
+            }
+
+
+            .account-tab {
+                padding: 20px;
+            }
+
+
+            .account-nav {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+
+            .profile-form {
+                grid-template-columns: 1fr;
+            }
+
+
+            .profile-form-group.full {
+                grid-column: auto;
+            }
+
+
+            .save-profile-btn {
+                grid-column: auto;
+            }
+
+
+            .wishlist-grid {
+                grid-template-columns: 1fr;
+            }
+
+
+            .order-body {
+                flex-direction: column;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================
+         HEADER
+    ====================================== -->
+
+    <header class="header">
+
+        <div class="container navbar">
+
+
+            <a href="index.html" class="logo">
+
+                <span class="logo-icon">
+                    <i class="fa-solid fa-shirt"></i>
+                </span>
+
+                <span class="logo-text">
+                    Style<span>Hub</span>
+                </span>
+
+            </a>
+
+
+            <nav class="nav-menu">
+
+                <a href="index.html"
+                   class="nav-link">
+                    Home
+                </a>
+
+                <a href="products.html?category=men"
+                   class="nav-link">
+                    Men
+                </a>
+
+                <a href="products.html?category=women"
+                   class="nav-link">
+                    Women
+                </a>
+
+                <a href="products.html?category=kids"
+                   class="nav-link">
+                    Kids
+                </a>
+
+                <a href="about.html"
+                   class="nav-link">
+                    About
+                </a>
+
+                <a href="contact.html"
+                   class="nav-link">
+                    Contact
+                </a>
+
+            </nav>
+
+
+            <div class="nav-actions">
+
+                <a href="products.html"
+                   class="nav-icon">
+
+                    <i class="fa-solid fa-magnifying-glass"></i>
+
+                </a>
+
+
+                <a href="account.html"
+                   class="nav-icon">
+
+                    <i class="fa-regular fa-user"></i>
+
+                </a>
+
+
+                <a href="account.html#wishlist"
+                   class="nav-icon">
+
+                    <i class="fa-regular fa-heart"></i>
+
+                    <span class="icon-count"
+                          id="wishlist-count">
+                        0
+                    </span>
+
+                </a>
+
+
+                <a href="cart.html"
+                   class="nav-icon">
+
+                    <i class="fa-solid fa-bag-shopping"></i>
+
+                    <span class="icon-count"
+                          id="cart-count">
+                        0
+                    </span>
+
+                </a>
+
+
+                <button
+                    class="menu-toggle"
+                    id="menu-toggle">
+
+                    <i class="fa-solid fa-bars"></i>
+
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <div class="mobile-menu"
+             id="mobile-menu">
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="products.html?category=men">
+                Men
+            </a>
+
+            <a href="products.html?category=women">
+                Women
+            </a>
+
+            <a href="products.html?category=kids">
+                Kids
+            </a>
+
+            <a href="about.html">
+                About
+            </a>
+
+            <a href="contact.html">
+                Contact
+            </a>
+
+            <a href="account.html">
+                My Account
+            </a>
+
+            <a href="cart.html">
+                Shopping Cart
+            </a>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =====================================
+         ACCOUNT
+    ====================================== -->
+
+    <main>
+
+        <section class="account-section">
+
+            <div class="container">
+
+
+                <!-- Heading -->
+
+                <div class="account-heading">
+
+                    <span>
+                        MY STYLEHUB
+                    </span>
+
+                    <h1>
+                        My Account
+                    </h1>
+
+                    <p>
+                        Manage your profile, orders,
+                        wishlist and saved address.
+                    </p>
+
+                </div>
+
+
+
+                <!-- Layout -->
+
+                <div class="account-layout">
+
+
+                    <!-- =================================
+                         SIDEBAR
+                    ================================== -->
+
+                    <aside class="account-sidebar">
+
+
+                        <div class="profile-mini">
+
+                            <div class="profile-avatar">
+
+                                <i class="fa-regular fa-user"></i>
+
+                            </div>
+
+                            <h3 id="sidebar-name">
+                                Guest User
+                            </h3>
+
+                            <p id="sidebar-email">
+                                Please login to your account
+                            </p>
+
+                        </div>
+
+
+                        <nav class="account-nav">
+
+
+                            <button
+                                class="account-tab-btn active"
+                                data-tab="profile">
+
+                                <i class="fa-regular fa-user"></i>
+
+                                Profile
+
+                            </button>
+
+
+                            <button
+                                class="account-tab-btn"
+                                data-tab="orders">
+
+                                <i class="fa-solid fa-box"></i>
+
+                                My Orders
+
+                            </button>
+
+
+                            <button
+                                class="account-tab-btn"
+                                data-tab="wishlist">
+
+                                <i class="fa-regular fa-heart"></i>
+
+                                Wishlist
+
+                            </button>
+
+
+                            <button
+                                class="account-tab-btn"
+                                data-tab="address">
+
+                                <i class="fa-solid fa-location-dot"></i>
+
+                                Address
+
+                            </button>
+
+
+                            <button
+                                class="account-tab-btn logout-nav"
+                                id="logout-btn">
+
+                                <i class="fa-solid fa-right-from-bracket"></i>
+
+                                Logout
+
+                            </button>
+
+
+                        </nav>
+
+                    </aside>
+
+
+
+                    <!-- =================================
+                         CONTENT
+                    ================================== -->
+
+                    <div class="account-content">
+
+
+                        <!-- =================================
+                             PROFILE TAB
+                        ================================== -->
+
+                        <div
+                            class="account-tab active"
+                            id="profile-tab">
+
+
+                            <div class="tab-title">
+
+                                <div>
+
+                                    <h2>
+                                        My Profile
+                                    </h2>
+
+                                    <p>
+                                        Update your personal
+                                        information.
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+
+                            <form
+                                class="profile-form"
+                                id="profile-form">
+
+
+                                <div class="profile-form-group">
+
+                                    <label for="profile-name">
+                                        Full Name
+                                    </label>
+
+                                    <input
+                                        type="text"
+                                        id="profile-name"
+                                        placeholder="Your name">
+
+                                </div>
+
+
+                                <div class="profile-form-group">
+
+                                    <label for="profile-email">
+                                        Email
+                                    </label>
+
+                                    <input
+                                        type="email"
+                                        id="profile-email"
+                                        placeholder="Your email">
+
+                                </div>
+
+
+                                <div class="profile-form-group">
+
+                                    <label for="profile-phone">
+                                        Phone Number
+                                    </label>
+
+                                    <input
+                                        type="tel"
+                                        id="profile-phone"
+                                        placeholder="Your phone">
+
+                                </div>
+
+
+                                <div class="profile-form-group">
+
+                                    <label for="profile-city">
+                                        City
+                                    </label>
+
+                                    <input
+                                        type="text"
+                                        id="profile-city"
+                                        placeholder="Your city">
+
+                                </div>
+
+
+                                <div class="profile-form-group full">
+
+                                    <label for="profile-address">
+                                        Address
+                                    </label>
+
+                                    <textarea
+                                        id="profile-address"
+                                        placeholder="Your address"></textarea>
+
+                                </div>
+
+
+                                <button
+                                    type="submit"
+                                    class="save-profile-btn">
+
+                                    Save Changes
+
+                                </button>
+
+                            </form>
+
+                        </div>
+
+
+
+                        <!-- =================================
+                             ORDERS TAB
+                        ================================== -->
+
+                        <div
+                            class="account-tab"
+                            id="orders-tab">
+
+
+                            <div class="tab-title">
+
+                                <div>
+
+                                    <h2>
+                                        My Orders
+                                    </h2>
+
+                                    <p>
+                                        View your recent orders.
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+
+                            <div id="orders-container">
+
+                                <!-- JavaScript -->
+
+                            </div>
+
+                        </div>
+
+
+
+                        <!-- =================================
+                             WISHLIST TAB
+                        ================================== -->
+
+                        <div
+                            class="account-tab"
+                            id="wishlist-tab">
+
+
+                            <div class="tab-title">
+
+                                <div>
+
+                                    <h2>
+                                        My Wishlist
+                                    </h2>
+
+                                    <p>
+                                        Products you saved
+                                        for later.
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+
+                            <div
+                                class="wishlist-grid"
+                                id="wishlist-container">
+
+                                <!-- JavaScript -->
+
+                            </div>
+
+                        </div>
+
+
+
+                        <!-- =================================
+                             ADDRESS TAB
+                        ================================== -->
+
+                        <div
+                            class="account-tab"
+                            id="address-tab">
+
+
+                            <div class="tab-title">
+
+                                <div>
+
+                                    <h2>
+                                        Saved Address
+                                    </h2>
+
+                                    <p>
+                                        Manage your delivery
+                                        address.
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+
+                            <div id="address-container">
+
+                                <!-- JavaScript -->
+
+                            </div>
+
+
+                            <button
+                                class="save-profile-btn"
+                                id="add-address-btn">
+
+                                <i class="fa-solid fa-plus"></i>
+
+                                Add / Edit Address
+
+                            </button>
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+
+    <!-- Toast -->
+
+    <div
+        class="account-toast"
+        id="account-toast">
+
+    </div>
+
+
+
+    <!-- =====================================
+         FOOTER
+    ====================================== -->
+
+    <footer class="footer">
+
+        <div class="container footer-grid">
+
+
+            <div class="footer-brand">
+
+                <a
+                    href="index.html"
+                    class="logo footer-logo">
+
+                    <span class="logo-icon">
+                        <i class="fa-solid fa-shirt"></i>
+                    </span>
+
+                    <span class="logo-text">
+                        Style<span>Hub</span>
+                    </span>
+
+                </a>
+
+                <p>
+                    Your destination for modern,
+                    stylish and comfortable fashion.
+                </p>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h3>
+                    Shop
+                </h3>
+
+                <a href="products.html?category=men">
+                    Men
+                </a>
+
+                <a href="products.html?category=women">
+                    Women
+                </a>
+
+                <a href="products.html?category=kids">
+                    Kids
+                </a>
+
+                <a href="products.html">
+                    New Arrivals
+                </a>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h3>
+                    Customer Care
+                </h3>
+
+                <a href="contact.html">
+                    Contact Us
+                </a>
+
+                <a href="account.html">
+                    My Account
+                </a>
+
+                <a href="cart.html">
+                    Shopping Cart
+                </a>
+
+                <a href="checkout.html">
+                    Checkout
+                </a>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h3>
+                    Contact
+                </h3>
+
+                <p>
+                    <i class="fa-solid fa-location-dot"></i>
+                    Chennai, Tamil Nadu
+                </p>
+
+                <p>
+                    <i class="fa-solid fa-phone"></i>
+                    +91 98765 43210
+                </p>
+
+                <p>
+                    <i class="fa-solid fa-envelope"></i>
+                    support@stylehub.com
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <div class="container footer-bottom-content">
+
+                <p>
+                    © 2026 StyleHub. All Rights Reserved.
+                </p>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+
+    <!-- =====================================
+         JAVASCRIPT
+    ====================================== -->
+
+    <script src="js/products.js"></script>
+
+    <script src="js/cart.js"></script>
+
+    <script src="js/script.js"></script>
+
+
+    <script>
+
+        // =====================================
+        // USER DATA
+        // =====================================
+
+        let user =
+            JSON.parse(
+                localStorage.getItem(
+                    "stylehubUser"
+                )
+            ) || null;
+
+
+        // =====================================
+        // DISPLAY USER
+        // =====================================
+
+        function loadUser() {
+
+            if (!user) {
+
+                document.getElementById(
+                    "sidebar-name"
+                ).textContent =
+                    "Guest User";
+
+                document.getElementById(
+                    "sidebar-email"
+                ).textContent =
+                    "Please login to your account";
+
+                return;
+
+            }
+
+
+            document.getElementById(
+                "sidebar-name"
+            ).textContent =
+                user.name || "User";
+
+
+            document.getElementById(
+                "sidebar-email"
+            ).textContent =
+                user.email || "";
+
+
+            document.getElementById(
+                "profile-name"
+            ).value =
+                user.name || "";
+
+
+            document.getElementById(
+                "profile-email"
+            ).value =
+                user.email || "";
+
+
+            document.getElementById(
+                "profile-phone"
+            ).value =
+                user.phone || "";
+
+
+            document.getElementById(
+                "profile-city"
+            ).value =
+                user.city || "";
+
+
+            document.getElementById(
+                "profile-address"
+            ).value =
+                user.address || "";
+
+        }
+
+
+        loadUser();
+
+
+
+        // =====================================
+        // TAB SWITCHING
+        // =====================================
+
+        const tabButtons =
+            document.querySelectorAll(
+                ".account-tab-btn"
+            );
+
+
+        const tabs =
+            document.querySelectorAll(
+                ".account-tab"
+            );
+
+
+        tabButtons.forEach(button => {
+
+            button.addEventListener(
+                "click",
+                function () {
+
+                    const tabName =
+                        this.dataset.tab;
+
+
+                    if (!tabName) {
+                        return;
+                    }
+
+
+                    tabButtons.forEach(btn => {
+
+                        btn.classList.remove(
+                            "active"
+                        );
+
+                    });
+
+
+                    tabs.forEach(tab => {
+
+                        tab.classList.remove(
+                            "active"
+                        );
+
+                    });
+
+
+                    this.classList.add(
+                        "active"
+                    );
+
+
+                    document
+                        .getElementById(
+                            tabName + "-tab"
+                        )
+                        .classList.add(
+                            "active"
+                        );
+
+
+                    if (
+                        tabName ===
+                        "orders"
+                    ) {
+
+                        loadOrders();
+
+                    }
+
+
+                    if (
+                        tabName ===
+                        "wishlist"
+                    ) {
+
+                        loadWishlist();
+
+                    }
+
+
+                    if (
+                        tabName ===
+                        "address"
+                    ) {
+
+                        loadAddress();
+
+                    }
+
+                }
+            );
+
+        });
+
+
+
+        // =====================================
+        // PROFILE SAVE
+        // =====================================
+
+        document
+            .getElementById(
+                "profile-form"
+            )
+            .addEventListener(
+                "submit",
+                function (event) {
+
+                    event.preventDefault();
+
+
+                    user = {
+
+                        ...(user || {}),
+
+                        name:
+                            document
+                                .getElementById(
+                                    "profile-name"
+                                )
+                                .value
+                                .trim(),
+
+                        email:
+                            document
+                                .getElementById(
+                                    "profile-email"
+                                )
+                                .value
+                                .trim(),
+
+                        phone:
+                            document
+                                .getElementById(
+                                    "profile-phone"
+                                )
+                                .value
+                                .trim(),
+
+                        city:
+                            document
+                                .getElementById(
+                                    "profile-city"
+                                )
+                                .value
+                                .trim(),
+
+                        address:
+                            document
+                                .getElementById(
+                                    "profile-address"
+                                )
+                                .value
+                                .trim()
+
+                    };
+
+
+                    localStorage.setItem(
+                        "stylehubUser",
+                        JSON.stringify(user)
+                    );
+
+
+                    loadUser();
+
+
+                    showToast(
+                        "Profile updated successfully!"
+                    );
+
+                }
+            );
+
+
+
+        // =====================================
+        // ORDERS
+        // =====================================
+
+        function loadOrders() {
+
+            const container =
+                document.getElementById(
+                    "orders-container"
+                );
+
+
+            const lastOrder =
+                JSON.parse(
+                    localStorage.getItem(
+                        "stylehubLastOrder"
+                    )
+                );
+
+
+            if (!lastOrder) {
+
+                container.innerHTML = `
+
+                    <div class="account-empty">
+
+                        <i class="fa-solid fa-box-open"></i>
+
+                        <h3>
+                            No Orders Yet
+                        </h3>
+
+                        <p>
+                            Your completed orders
+                            will appear here.
+                        </p>
+
+                        <a
+                            href="products.html"
+                            class="shop-btn">
+
+                            Start Shopping
+
+                        </a>
+
+                    </div>
+
+                `;
+
+                return;
+
+            }
+
+
+            let itemCount = 0;
+
+            lastOrder.items.forEach(item => {
+
+                itemCount +=
+                    Number(
+                        item.quantity
+                    );
+
+            });
+
+
+            container.innerHTML = `
+
+                <div class="order-card">
+
+                    <div class="order-header">
+
+                        <div>
+
+                            <div class="order-id">
+
+                                ${lastOrder.orderId}
+
+                            </div>
+
+                            <div class="order-date">
+
+                                ${lastOrder.date}
+
+                            </div>
+
+                        </div>
+
+                        <span class="order-status">
+
+                            Placed
+
+                        </span>
+
+                    </div>
+
+
+                    <div class="order-body">
+
+                        <div class="order-items">
+
+                            ${itemCount}
+                            item(s)
+
+                            <br>
+
+                            Payment:
+                            ${lastOrder.paymentMethod}
+
+                        </div>
+
+
+                        <div class="order-total">
+
+                            ₹${Number(
+                                lastOrder.total
+                            ).toLocaleString("en-IN")}
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            `;
+
+        }
+
+
+
+        // =====================================
+        // WISHLIST
+        // =====================================
+
+        function getWishlist() {
+
+            return JSON.parse(
+                localStorage.getItem(
+                    "stylehubWishlist"
+                )
+            ) || [];
+
+        }
+
+
+        function loadWishlist() {
+
+            const container =
+                document.getElementById(
+                    "wishlist-container"
+                );
+
+
+            const wishlist =
+                getWishlist();
+
+
+            if (
+                wishlist.length === 0
+            ) {
+
+                container.innerHTML = `
+
+                    <div
+                        class="account-empty"
+                        style="grid-column:1/-1;">
+
+                        <i class="fa-regular fa-heart"></i>
+
+                        <h3>
+                            Your Wishlist Is Empty
+                        </h3>
+
+                        <p>
+                            Save your favorite products
+                            here for later.
+                        </p>
+
+                        <a
+                            href="products.html"
+                            class="shop-btn">
+
+                            Explore Products
+
+                        </a>
+
+                    </div>
+
+                `;
+
+                return;
+
+            }
+
+
+            container.innerHTML = "";
+
+
+            wishlist.forEach(
+                productId => {
+
+                    const product =
+                        getProductById(
+                            Number(productId)
+                        );
+
+
+                    if (!product) {
+                        return;
+                    }
+
+
+                    const item =
+                        document.createElement(
+                            "div"
+                        );
+
+
+                    item.className =
+                        "wishlist-item";
+
+
+                    item.innerHTML = `
+
+                        <div class="wishlist-image">
+
+                            <img
+                                src="${product.image}"
+                                alt="${product.name}">
+
+                        </div>
+
+
+                        <div class="wishlist-info">
+
+                            <h3>
+                                ${product.name}
+                            </h3>
+
+                            <p>
+                                ₹${Number(
+                                    product.price
+                                ).toLocaleString("en-IN")}
+                            </p>
+
+
+                            <div class="wishlist-actions">
+
+                                <button
+                                    onclick="viewWishlistProduct(${product.id})">
+
+                                    View
+
+                                </button>
+
+                                <button
+                                    onclick="removeWishlistProduct(${product.id})">
+
+                                    Remove
+
+                                </button>
+
+                            </div>
+
+                        </div>
+
+                    `;
+
+
+                    container.appendChild(
+                        item
+                    );
+
+                }
+            );
+
+        }
+
+
+
+        // =====================================
+        // WISHLIST VIEW
+        // =====================================
+
+        function viewWishlistProduct(
+            productId
+        ) {
+
+            window.location.href =
+                "product-detail.html?id=" +
+                productId;
+
+        }
+
+
+
+        // =====================================
+        // REMOVE WISHLIST
+        // =====================================
+
+        function removeWishlistProduct(
+            productId
+        ) {
+
+            let wishlist =
+                getWishlist();
+
+
+            wishlist =
+                wishlist.filter(
+                    id =>
+                        Number(id) !==
+                        Number(productId)
+                );
+
+
+            localStorage.setItem(
+                "stylehubWishlist",
+                JSON.stringify(
+                    wishlist
+                )
+            );
+
+
+            loadWishlist();
+
+
+            updateWishlistCount();
+
+
+            showToast(
+                "Removed from wishlist."
+            );
+
+        }
+
+
+
+        // =====================================
+        // WISHLIST COUNT
+        // =====================================
+
+        function updateWishlistCount() {
+
+            const count =
+                getWishlist().length;
+
+
+            const element =
+                document.getElementById(
+                    "wishlist-count"
+                );
+
+
+            if (element) {
+
+                element.textContent =
+                    count;
+
+            }
+
+        }
+
+
+        updateWishlistCount();
+
+
+
+        // =====================================
+        // ADDRESS
+        // =====================================
+
+        function loadAddress() {
+
+            const container =
+                document.getElementById(
+                    "address-container"
+                );
+
+
+            const savedAddress =
+                JSON.parse(
+                    localStorage.getItem(
+                        "stylehubAddress"
+                    )
+                );
+
+
+            if (!savedAddress) {
+
+                container.innerHTML = `
+
+                    <div class="account-empty">
+
+                        <i class="fa-solid fa-location-dot"></i>
+
+                        <h3>
+                            No Saved Address
+                        </h3>
+
+                        <p>
+                            Add your delivery address
+                            for faster checkout.
+                        </p>
+
+                    </div>
+
+                `;
+
+                return;
+
+            }
+
+
+            container.innerHTML = `
+
+                <div class="address-card">
+
+                    <span class="address-badge">
+                        DEFAULT ADDRESS
+                    </span>
+
+                    <h3>
+                        ${savedAddress.name}
+                    </h3>
+
+                    <p>
+
+                        ${savedAddress.address}
+                        <br>
+
+                        ${savedAddress.city},
+                        ${savedAddress.state}
+                        -
+                        ${savedAddress.pincode}
+
+                        <br>
+
+                        Phone:
+                        ${savedAddress.phone}
+
+                    </p>
+
+                </div>
+
+            `;
+
+        }
+
+
+        loadAddress();
+
+
+
+        // =====================================
+        // ADD / EDIT ADDRESS
+        // =====================================
+
+        document
+            .getElementById(
+                "add-address-btn"
+            )
+            .addEventListener(
+                "click",
+                function () {
+
+                    const name =
+                        prompt(
+                            "Enter your name:"
+                        );
+
+
+                    if (!name) {
+                        return;
+                    }
+
+
+                    const phone =
+                        prompt(
+                            "Enter your phone number:"
+                        );
+
+
+                    const address =
+                        prompt(
+                            "Enter your full address:"
+                        );
+
+
+                    const city =
+                        prompt(
+                            "Enter your city:"
+                        );
+
+
+                    const state =
+                        prompt(
+                            "Enter your state:"
+                        );
+
+
+                    const pincode =
+                        prompt(
+                            "Enter your pincode:"
+                        );
+
+
+                    const savedAddress = {
+
+                        name,
+                        phone,
+                        address,
+                        city,
+                        state,
+                        pincode
+
+                    };
+
+
+                    localStorage.setItem(
+                        "stylehubAddress",
+                        JSON.stringify(
+                            savedAddress
+                        )
+                    );
+
+
+                    loadAddress();
+
+
+                    showToast(
+                        "Address saved successfully!"
+                    );
+
+                }
+            );
+
+
+
+        // =====================================
+        // LOGOUT
+        // =====================================
+
+        document
+            .getElementById(
+                "logout-btn"
+            )
+            .addEventListener(
+                "click",
+                function () {
+
+                    const confirmLogout =
+                        confirm(
+                            "Are you sure you want to logout?"
+                        );
+
+
+                    if (!confirmLogout) {
+                        return;
+                    }
+
+
+                    localStorage.removeItem(
+                        "stylehubUser"
+                    );
+
+
+                    window.location.href =
+                        "login.html";
+
+                }
+            );
+
+
+
+        // =====================================
+        // TOAST
+        // =====================================
+
+        function showToast(message) {
+
+            const toast =
+                document.getElementById(
+                    "account-toast"
+                );
+
+
+            toast.textContent =
+                message;
+
+
+            toast.classList.add(
+                "show"
+            );
+
+
+            setTimeout(
+                () => {
+
+                    toast.classList.remove(
+                        "show"
+                    );
+
+                },
+                2500
+            );
+
+        }
+
+
+
+        // =====================================
+        // CART COUNT
+        // =====================================
+
+        if (
+            typeof updateCartCount ===
+            "function"
+        ) {
+
+            updateCartCount();
+
+        }
+
+    </script>
+
+</body>
+
+</html>
