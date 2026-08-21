@@ -1,0 +1,1665 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="Contact StyleHub customer support.">
+
+    <title>Contact Us | StyleHub</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Playfair+Display:wght@500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- Main CSS -->
+    <link rel="stylesheet"
+          href="css/style.css">
+
+
+    <style>
+
+        /* =====================================
+           CONTACT PAGE
+        ===================================== */
+
+        .contact-section {
+            background: #f8f3f4;
+            padding-bottom: 90px;
+        }
+
+
+        /* =====================================
+           HERO
+        ===================================== */
+
+        .contact-hero {
+            min-height: 430px;
+            display: flex;
+            align-items: center;
+            position: relative;
+
+            background:
+                linear-gradient(
+                    rgba(26, 26, 46, 0.58),
+                    rgba(26, 26, 46, 0.75)
+                ),
+                url("images/contact.jpg")
+                center / cover no-repeat;
+        }
+
+
+        .contact-hero-content {
+            max-width: 650px;
+            color: #ffffff;
+        }
+
+
+        .contact-hero-content span {
+            color: #e4c766;
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
+
+        .contact-hero-content h1 {
+            font-family: "Playfair Display", serif;
+            font-size: clamp(45px, 7vw, 70px);
+            line-height: 1.05;
+            margin: 12px 0;
+        }
+
+
+        .contact-hero-content p {
+            max-width: 520px;
+            color: rgba(255,255,255,0.75);
+            font-size: 12px;
+            line-height: 1.9;
+        }
+
+
+        /* =====================================
+           CONTACT MAIN
+        ===================================== */
+
+        .contact-main {
+            padding: 80px 0 0;
+        }
+
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 0.8fr 1.2fr;
+            gap: 30px;
+            align-items: start;
+        }
+
+
+        /* =====================================
+           CONTACT INFO
+        ===================================== */
+
+        .contact-info {
+            background: #1a1a2e;
+            color: #ffffff;
+            padding: 40px;
+        }
+
+
+        .contact-info > span {
+            color: #e4c766;
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 2px;
+        }
+
+
+        .contact-info h2 {
+            font-family: "Playfair Display", serif;
+            font-size: 34px;
+            line-height: 1.2;
+            margin: 10px 0 15px;
+        }
+
+
+        .contact-info > p {
+            color: rgba(255,255,255,0.65);
+            font-size: 10px;
+            line-height: 1.9;
+            margin-bottom: 30px;
+        }
+
+
+        .contact-info-item {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+
+
+        .contact-info-icon {
+            width: 42px;
+            height: 42px;
+            flex-shrink: 0;
+            display: grid;
+            place-items: center;
+            background: rgba(255,255,255,0.08);
+            color: #e4c766;
+        }
+
+
+        .contact-info-item h3 {
+            font-family: "Playfair Display", serif;
+            font-size: 16px;
+            margin-bottom: 5px;
+        }
+
+
+        .contact-info-item p {
+            color: rgba(255,255,255,0.65);
+            font-size: 9px;
+            line-height: 1.7;
+        }
+
+
+        .contact-socials {
+            display: flex;
+            gap: 8px;
+            margin-top: 30px;
+            padding-top: 25px;
+            border-top: 1px solid rgba(255,255,255,0.12);
+        }
+
+
+        .contact-socials a {
+            width: 35px;
+            height: 35px;
+            display: grid;
+            place-items: center;
+            border: 1px solid rgba(255,255,255,0.2);
+            color: #ffffff;
+            font-size: 12px;
+            transition: 0.3s ease;
+        }
+
+
+        .contact-socials a:hover {
+            background: #c9a227;
+            border-color: #c9a227;
+        }
+
+
+        /* =====================================
+           CONTACT FORM
+        ===================================== */
+
+        .contact-form-card {
+            background: #ffffff;
+            padding: 40px;
+            border: 1px solid #e5e5e5;
+        }
+
+
+        .contact-form-card h2 {
+            font-family: "Playfair Display", serif;
+            font-size: 30px;
+            margin-bottom: 7px;
+        }
+
+
+        .contact-form-card > p {
+            color: #999;
+            font-size: 10px;
+            margin-bottom: 25px;
+        }
+
+
+        .contact-form {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 18px;
+        }
+
+
+        .contact-form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+
+        .contact-form-group.full {
+            grid-column: 1 / -1;
+        }
+
+
+        .contact-form-group label {
+            margin-bottom: 7px;
+            color: #1a1a2e;
+            font-size: 10px;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+
+        .required {
+            color: #c0392b;
+        }
+
+
+        .contact-form-group input,
+        .contact-form-group select,
+        .contact-form-group textarea {
+            width: 100%;
+            box-sizing: border-box;
+            padding: 13px 14px;
+            border: 1px solid #ddd;
+            outline: none;
+            background: #ffffff;
+            font-family: "Montserrat", sans-serif;
+            font-size: 10px;
+        }
+
+
+        .contact-form-group textarea {
+            min-height: 140px;
+            resize: vertical;
+        }
+
+
+        .contact-form-group input:focus,
+        .contact-form-group select:focus,
+        .contact-form-group textarea:focus {
+            border-color: #c9a227;
+        }
+
+
+        .contact-submit {
+            grid-column: 1 / -1;
+            width: fit-content;
+            min-width: 160px;
+            padding: 14px 25px;
+            border: 0;
+            background: #1a1a2e;
+            color: #ffffff;
+            font-size: 10px;
+            font-weight: 700;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: 0.3s ease;
+        }
+
+
+        .contact-submit:hover {
+            background: #c9a227;
+        }
+
+
+        /* =====================================
+           MESSAGE
+        ===================================== */
+
+        .contact-message {
+            display: none;
+            grid-column: 1 / -1;
+            padding: 12px 15px;
+            font-size: 10px;
+        }
+
+
+        .contact-message.success {
+            display: block;
+            background: #f1fff5;
+            border: 1px solid #c5e8d0;
+            color: #267a43;
+        }
+
+
+        .contact-message.error {
+            display: block;
+            background: #fff1f1;
+            border: 1px solid #f0caca;
+            color: #c0392b;
+        }
+
+
+        /* =====================================
+           FAQ
+        ===================================== */
+
+        .faq-section {
+            margin-top: 80px;
+        }
+
+
+        .section-heading {
+            max-width: 600px;
+            margin: 0 auto 40px;
+            text-align: center;
+        }
+
+
+        .section-heading span {
+            color: #c9a227;
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+
+        .section-heading h2 {
+            font-family: "Playfair Display", serif;
+            font-size: 42px;
+            margin: 10px 0;
+        }
+
+
+        .section-heading p {
+            color: #777;
+            font-size: 10px;
+            line-height: 1.8;
+        }
+
+
+        .faq-list {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+
+        .faq-item {
+            background: #ffffff;
+            border: 1px solid #e5e5e5;
+            margin-bottom: 10px;
+        }
+
+
+        .faq-question {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+            padding: 18px 20px;
+            border: 0;
+            background: transparent;
+            text-align: left;
+            color: #1a1a2e;
+            font-family: "Montserrat", sans-serif;
+            font-size: 10px;
+            font-weight: 700;
+            cursor: pointer;
+        }
+
+
+        .faq-question i {
+            color: #c9a227;
+            transition: 0.3s ease;
+        }
+
+
+        .faq-answer {
+            display: none;
+            padding: 0 20px 18px;
+            color: #777;
+            font-size: 9px;
+            line-height: 1.8;
+        }
+
+
+        .faq-item.open .faq-answer {
+            display: block;
+        }
+
+
+        .faq-item.open
+        .faq-question i {
+            transform: rotate(180deg);
+        }
+
+
+        /* =====================================
+           RESPONSIVE
+        ===================================== */
+
+        @media (max-width: 850px) {
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+        }
+
+
+        @media (max-width: 600px) {
+
+            .contact-hero {
+                min-height: 380px;
+            }
+
+
+            .contact-main {
+                padding-top: 55px;
+            }
+
+
+            .contact-info,
+            .contact-form-card {
+                padding: 25px;
+            }
+
+
+            .contact-form {
+                grid-template-columns: 1fr;
+            }
+
+
+            .contact-form-group.full,
+            .contact-submit,
+            .contact-message {
+                grid-column: auto;
+            }
+
+
+            .section-heading h2 {
+                font-size: 35px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================
+         HEADER
+    ====================================== -->
+
+    <header class="header">
+
+        <div class="container navbar">
+
+
+            <a href="index.html"
+               class="logo">
+
+                <span class="logo-icon">
+                    <i class="fa-solid fa-shirt"></i>
+                </span>
+
+                <span class="logo-text">
+                    Style<span>Hub</span>
+                </span>
+
+            </a>
+
+
+            <nav class="nav-menu">
+
+                <a href="index.html"
+                   class="nav-link">
+                    Home
+                </a>
+
+                <a
+                    href="products.html?category=men"
+                    class="nav-link">
+                    Men
+                </a>
+
+                <a
+                    href="products.html?category=women"
+                    class="nav-link">
+                    Women
+                </a>
+
+                <a
+                    href="products.html?category=kids"
+                    class="nav-link">
+                    Kids
+                </a>
+
+                <a href="about.html"
+                   class="nav-link">
+                    About
+                </a>
+
+                <a href="contact.html"
+                   class="nav-link active">
+                    Contact
+                </a>
+
+            </nav>
+
+
+            <div class="nav-actions">
+
+                <a href="products.html"
+                   class="nav-icon">
+
+                    <i class="fa-solid fa-magnifying-glass"></i>
+
+                </a>
+
+
+                <a href="login.html"
+                   class="nav-icon">
+
+                    <i class="fa-regular fa-user"></i>
+
+                </a>
+
+
+                <a
+                    href="account.html#wishlist"
+                    class="nav-icon">
+
+                    <i class="fa-regular fa-heart"></i>
+
+                    <span
+                        class="icon-count"
+                        id="wishlist-count">
+                        0
+                    </span>
+
+                </a>
+
+
+                <a href="cart.html"
+                   class="nav-icon">
+
+                    <i class="fa-solid fa-bag-shopping"></i>
+
+                    <span
+                        class="icon-count"
+                        id="cart-count">
+                        0
+                    </span>
+
+                </a>
+
+
+                <button
+                    class="menu-toggle"
+                    id="menu-toggle">
+
+                    <i class="fa-solid fa-bars"></i>
+
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- Mobile Menu -->
+
+        <div
+            class="mobile-menu"
+            id="mobile-menu">
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="products.html?category=men">
+                Men
+            </a>
+
+            <a href="products.html?category=women">
+                Women
+            </a>
+
+            <a href="products.html?category=kids">
+                Kids
+            </a>
+
+            <a href="about.html">
+                About
+            </a>
+
+            <a href="contact.html">
+                Contact
+            </a>
+
+            <a href="login.html">
+                Login
+            </a>
+
+            <a href="cart.html">
+                Shopping Cart
+            </a>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =====================================
+         CONTACT
+    ====================================== -->
+
+    <main>
+
+        <section class="contact-section">
+
+
+            <!-- =================================
+                 HERO
+            ================================== -->
+
+            <div class="contact-hero">
+
+                <div class="container">
+
+                    <div class="contact-hero-content">
+
+                        <span>
+                            GET IN TOUCH
+                        </span>
+
+                        <h1>
+                            We'd Love<br>
+                            To Hear From You.
+                        </h1>
+
+                        <p>
+                            Have a question about an order,
+                            product or anything else?
+                            Our team is here to help.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =================================
+                 CONTACT MAIN
+            ================================== -->
+
+            <section class="contact-main">
+
+                <div class="container">
+
+
+                    <div class="contact-grid">
+
+
+                        <!-- =================================
+                             CONTACT INFO
+                        ================================== -->
+
+                        <div class="contact-info">
+
+                            <span>
+                                CONTACT DETAILS
+                            </span>
+
+                            <h2>
+                                Let's Talk
+                            </h2>
+
+                            <p>
+                                We're always happy to help.
+                                Reach out to us through any
+                                of the following channels.
+                            </p>
+
+
+                            <!-- Address -->
+
+                            <div class="contact-info-item">
+
+                                <div class="contact-info-icon">
+
+                                    <i
+                                        class="fa-solid fa-location-dot">
+                                    </i>
+
+                                </div>
+
+                                <div>
+
+                                    <h3>
+                                        Visit Us
+                                    </h3>
+
+                                    <p>
+                                        StyleHub Fashion Store<br>
+                                        Chennai, Tamil Nadu<br>
+                                        India
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+
+                            <!-- Phone -->
+
+                            <div class="contact-info-item">
+
+                                <div class="contact-info-icon">
+
+                                    <i
+                                        class="fa-solid fa-phone">
+                                    </i>
+
+                                </div>
+
+                                <div>
+
+                                    <h3>
+                                        Call Us
+                                    </h3>
+
+                                    <p>
+                                        +91 98765 43210<br>
+                                        Mon - Sat, 9 AM - 6 PM
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+
+                            <!-- Email -->
+
+                            <div class="contact-info-item">
+
+                                <div class="contact-info-icon">
+
+                                    <i
+                                        class="fa-solid fa-envelope">
+                                    </i>
+
+                                </div>
+
+                                <div>
+
+                                    <h3>
+                                        Email Us
+                                    </h3>
+
+                                    <p>
+                                        support@stylehub.com<br>
+                                        We reply within 24 hours.
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+
+                            <!-- Social -->
+
+                            <div class="contact-socials">
+
+                                <a href="#">
+                                    <i
+                                        class="fa-brands fa-instagram">
+                                    </i>
+                                </a>
+
+                                <a href="#">
+                                    <i
+                                        class="fa-brands fa-facebook-f">
+                                    </i>
+                                </a>
+
+                                <a href="#">
+                                    <i
+                                        class="fa-brands fa-pinterest-p">
+                                    </i>
+                                </a>
+
+                                <a href="#">
+                                    <i
+                                        class="fa-brands fa-x-twitter">
+                                    </i>
+                                </a>
+
+                            </div>
+
+                        </div>
+
+
+
+                        <!-- =================================
+                             CONTACT FORM
+                        ================================== -->
+
+                        <div class="contact-form-card">
+
+                            <h2>
+                                Send Us A Message
+                            </h2>
+
+                            <p>
+                                Fill out the form below and
+                                we'll get back to you soon.
+                            </p>
+
+
+                            <form
+                                class="contact-form"
+                                id="contact-form">
+
+
+                                <!-- Message -->
+
+                                <div
+                                    class="contact-message"
+                                    id="contact-message">
+                                </div>
+
+
+                                <!-- Name -->
+
+                                <div
+                                    class="contact-form-group">
+
+                                    <label for="contact-name">
+
+                                        Full Name
+                                        <span class="required">*</span>
+
+                                    </label>
+
+                                    <input
+                                        type="text"
+                                        id="contact-name"
+                                        placeholder="Enter your name"
+                                        required>
+
+                                </div>
+
+
+                                <!-- Email -->
+
+                                <div
+                                    class="contact-form-group">
+
+                                    <label for="contact-email">
+
+                                        Email
+                                        <span class="required">*</span>
+
+                                    </label>
+
+                                    <input
+                                        type="email"
+                                        id="contact-email"
+                                        placeholder="Enter your email"
+                                        required>
+
+                                </div>
+
+
+                                <!-- Phone -->
+
+                                <div
+                                    class="contact-form-group">
+
+                                    <label for="contact-phone">
+
+                                        Phone Number
+
+                                    </label>
+
+                                    <input
+                                        type="tel"
+                                        id="contact-phone"
+                                        placeholder="+91 98765 43210">
+
+                                </div>
+
+
+                                <!-- Subject -->
+
+                                <div
+                                    class="contact-form-group">
+
+                                    <label for="contact-subject">
+
+                                        Subject
+                                        <span class="required">*</span>
+
+                                    </label>
+
+                                    <select
+                                        id="contact-subject"
+                                        required>
+
+                                        <option value="">
+                                            Select a subject
+                                        </option>
+
+                                        <option>
+                                            Order Enquiry
+                                        </option>
+
+                                        <option>
+                                            Product Enquiry
+                                        </option>
+
+                                        <option>
+                                            Return / Refund
+                                        </option>
+
+                                        <option>
+                                            Delivery Issue
+                                        </option>
+
+                                        <option>
+                                            General Enquiry
+                                        </option>
+
+                                        <option>
+                                            Other
+                                        </option>
+
+                                    </select>
+
+                                </div>
+
+
+                                <!-- Message -->
+
+                                <div
+                                    class="contact-form-group full">
+
+                                    <label for="contact-text">
+
+                                        Your Message
+                                        <span class="required">*</span>
+
+                                    </label>
+
+                                    <textarea
+                                        id="contact-text"
+                                        placeholder="Write your message here..."
+                                        required></textarea>
+
+                                </div>
+
+
+                                <!-- Submit -->
+
+                                <button
+                                    type="submit"
+                                    class="contact-submit">
+
+                                    Send Message
+
+                                    <i
+                                        class="fa-solid fa-paper-plane">
+                                    </i>
+
+                                </button>
+
+                            </form>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- =================================
+                         FAQ
+                    ================================== -->
+
+                    <div class="faq-section">
+
+
+                        <div class="section-heading">
+
+                            <span>
+                                FAQ
+                            </span>
+
+                            <h2>
+                                Frequently Asked Questions
+                            </h2>
+
+                            <p>
+                                Find quick answers to some
+                                common questions.
+                            </p>
+
+                        </div>
+
+
+                        <div class="faq-list">
+
+
+                            <!-- FAQ 1 -->
+
+                            <div class="faq-item">
+
+                                <button
+                                    class="faq-question">
+
+                                    How can I track my order?
+
+                                    <i
+                                        class="fa-solid fa-chevron-down">
+                                    </i>
+
+                                </button>
+
+                                <div class="faq-answer">
+
+                                    Once your order is placed,
+                                    you can view your order
+                                    details from the My Account
+                                    section.
+
+                                </div>
+
+                            </div>
+
+
+                            <!-- FAQ 2 -->
+
+                            <div class="faq-item">
+
+                                <button
+                                    class="faq-question">
+
+                                    What payment methods do you accept?
+
+                                    <i
+                                        class="fa-solid fa-chevron-down">
+                                    </i>
+
+                                </button>
+
+                                <div class="faq-answer">
+
+                                    StyleHub currently supports
+                                    Cash on Delivery, Credit /
+                                    Debit Card and UPI in the
+                                    demo checkout system.
+
+                                </div>
+
+                            </div>
+
+
+                            <!-- FAQ 3 -->
+
+                            <div class="faq-item">
+
+                                <button
+                                    class="faq-question">
+
+                                    Can I return a product?
+
+                                    <i
+                                        class="fa-solid fa-chevron-down">
+                                    </i>
+
+                                </button>
+
+                                <div class="faq-answer">
+
+                                    Return and refund requests
+                                    can be submitted through
+                                    our customer support form.
+
+                                </div>
+
+                            </div>
+
+
+                            <!-- FAQ 4 -->
+
+                            <div class="faq-item">
+
+                                <button
+                                    class="faq-question">
+
+                                    How long does delivery take?
+
+                                    <i
+                                        class="fa-solid fa-chevron-down">
+                                    </i>
+
+                                </button>
+
+                                <div class="faq-answer">
+
+                                    Delivery time depends on
+                                    the destination and product
+                                    availability.
+
+                                </div>
+
+                            </div>
+
+
+                            <!-- FAQ 5 -->
+
+                            <div class="faq-item">
+
+                                <button
+                                    class="faq-question">
+
+                                    How can I contact support?
+
+                                    <i
+                                        class="fa-solid fa-chevron-down">
+                                    </i>
+
+                                </button>
+
+                                <div class="faq-answer">
+
+                                    You can use the contact form
+                                    on this page or email us at
+                                    support@stylehub.com.
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+        </section>
+
+    </main>
+
+
+
+    <!-- =====================================
+         FOOTER
+    ====================================== -->
+
+    <footer class="footer">
+
+        <div class="container footer-grid">
+
+
+            <div class="footer-brand">
+
+                <a
+                    href="index.html"
+                    class="logo footer-logo">
+
+                    <span class="logo-icon">
+                        <i class="fa-solid fa-shirt"></i>
+                    </span>
+
+                    <span class="logo-text">
+                        Style<span>Hub</span>
+                    </span>
+
+                </a>
+
+                <p>
+                    Your destination for modern,
+                    stylish and comfortable fashion.
+                </p>
+
+
+                <div class="social-links">
+
+                    <a href="#">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+
+                    <a href="#">
+                        <i class="fa-brands fa-facebook-f"></i>
+                    </a>
+
+                    <a href="#">
+                        <i class="fa-brands fa-pinterest-p"></i>
+                    </a>
+
+                    <a href="#">
+                        <i class="fa-brands fa-x-twitter"></i>
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h3>
+                    Shop
+                </h3>
+
+                <a href="products.html?category=men">
+                    Men
+                </a>
+
+                <a href="products.html?category=women">
+                    Women
+                </a>
+
+                <a href="products.html?category=kids">
+                    Kids
+                </a>
+
+                <a href="products.html">
+                    New Arrivals
+                </a>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h3>
+                    Customer Care
+                </h3>
+
+                <a href="contact.html">
+                    Contact Us
+                </a>
+
+                <a href="account.html">
+                    My Account
+                </a>
+
+                <a href="cart.html">
+                    Shopping Cart
+                </a>
+
+                <a href="checkout.html">
+                    Checkout
+                </a>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h3>
+                    Contact
+                </h3>
+
+                <p>
+                    <i class="fa-solid fa-location-dot"></i>
+                    Chennai, Tamil Nadu
+                </p>
+
+                <p>
+                    <i class="fa-solid fa-phone"></i>
+                    +91 98765 43210
+                </p>
+
+                <p>
+                    <i class="fa-solid fa-envelope"></i>
+                    support@stylehub.com
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <div class="container footer-bottom-content">
+
+                <p>
+                    © 2026 StyleHub. All Rights Reserved.
+                </p>
+
+                <div>
+
+                    <a href="#">
+                        Privacy Policy
+                    </a>
+
+                    <a href="#">
+                        Terms & Conditions
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+
+    <!-- =====================================
+         JAVASCRIPT
+    ====================================== -->
+
+    <script src="js/products.js"></script>
+
+    <script src="js/cart.js"></script>
+
+    <script src="js/script.js"></script>
+
+
+    <script>
+
+        // =====================================
+        // CONTACT FORM
+        // =====================================
+
+        const contactForm =
+            document.getElementById(
+                "contact-form"
+            );
+
+
+        const contactMessage =
+            document.getElementById(
+                "contact-message"
+            );
+
+
+        contactForm.addEventListener(
+            "submit",
+            function (event) {
+
+                event.preventDefault();
+
+
+                contactMessage.className =
+                    "contact-message";
+
+
+                const name =
+                    document.getElementById(
+                        "contact-name"
+                    ).value.trim();
+
+
+                const email =
+                    document.getElementById(
+                        "contact-email"
+                    ).value.trim();
+
+
+                const subject =
+                    document.getElementById(
+                        "contact-subject"
+                    ).value;
+
+
+                const message =
+                    document.getElementById(
+                        "contact-text"
+                    ).value.trim();
+
+
+                // Validation
+
+                if (name.length < 3) {
+
+                    contactMessage.textContent =
+                        "Please enter your full name.";
+
+                    contactMessage.classList.add(
+                        "error"
+                    );
+
+                    return;
+
+                }
+
+
+                if (
+                    !email.includes("@")
+                ) {
+
+                    contactMessage.textContent =
+                        "Please enter a valid email address.";
+
+                    contactMessage.classList.add(
+                        "error"
+                    );
+
+                    return;
+
+                }
+
+
+                if (!subject) {
+
+                    contactMessage.textContent =
+                        "Please select a subject.";
+
+                    contactMessage.classList.add(
+                        "error"
+                    );
+
+                    return;
+
+                }
+
+
+                if (message.length < 10) {
+
+                    contactMessage.textContent =
+                        "Please enter a message with at least 10 characters.";
+
+                    contactMessage.classList.add(
+                        "error"
+                    );
+
+                    return;
+
+                }
+
+
+                // Save message locally
+
+                const contactData = {
+
+                    name: name,
+
+                    email: email,
+
+                    phone:
+                        document.getElementById(
+                            "contact-phone"
+                        ).value.trim(),
+
+                    subject: subject,
+
+                    message: message,
+
+                    date:
+                        new Date()
+                            .toLocaleString(
+                                "en-IN"
+                            )
+
+                };
+
+
+                const oldMessages =
+                    JSON.parse(
+                        localStorage.getItem(
+                            "stylehubMessages"
+                        )
+                    ) || [];
+
+
+                oldMessages.push(
+                    contactData
+                );
+
+
+                localStorage.setItem(
+                    "stylehubMessages",
+                    JSON.stringify(
+                        oldMessages
+                    )
+                );
+
+
+                // Success
+
+                contactMessage.textContent =
+                    "Thank you! Your message has been submitted successfully.";
+
+                contactMessage.classList.add(
+                    "success"
+                );
+
+
+                contactForm.reset();
+
+            }
+        );
+
+
+
+        // =====================================
+        // FAQ
+        // =====================================
+
+        const faqQuestions =
+            document.querySelectorAll(
+                ".faq-question"
+            );
+
+
+        faqQuestions.forEach(
+            question => {
+
+                question.addEventListener(
+                    "click",
+                    function () {
+
+                        const currentItem =
+                            this.closest(
+                                ".faq-item"
+                            );
+
+
+                        document
+                            .querySelectorAll(
+                                ".faq-item"
+                            )
+                            .forEach(
+                                item => {
+
+                                    if (
+                                        item !==
+                                        currentItem
+                                    ) {
+
+                                        item.classList.remove(
+                                            "open"
+                                        );
+
+                                    }
+
+                                }
+                            );
+
+
+                        currentItem.classList.toggle(
+                            "open"
+                        );
+
+                    }
+                );
+
+            }
+        );
+
+
+
+        // =====================================
+        // WISHLIST COUNT
+        // =====================================
+
+        function updateContactWishlistCount() {
+
+            const wishlist =
+                JSON.parse(
+                    localStorage.getItem(
+                        "stylehubWishlist"
+                    )
+                ) || [];
+
+
+            const element =
+                document.getElementById(
+                    "wishlist-count"
+                );
+
+
+            if (element) {
+
+                element.textContent =
+                    wishlist.length;
+
+            }
+
+        }
+
+
+        updateContactWishlistCount();
+
+
+
+        // =====================================
+        // CART COUNT
+        // =====================================
+
+        if (
+            typeof updateCartCount ===
+            "function"
+        ) {
+
+            updateCartCount();
+
+        }
+
+    </script>
+
+</body>
+
+</html>
