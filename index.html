@@ -1,0 +1,1226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+        content="StyleHub - Fashion and Apparel Store for Men, Women and Kids">
+
+    <meta name="keywords"
+        content="fashion, clothing, apparel, men, women, kids, StyleHub">
+
+    <meta name="author" content="StyleHub">
+
+    <title>StyleHub | Fashion & Apparel</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Playfair+Display:wght@500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- =========================
+         HEADER / NAVIGATION
+    ========================== -->
+
+    <header class="header">
+
+        <div class="container navbar">
+
+            <!-- Logo -->
+            <a href="index.html" class="logo">
+                <span class="logo-icon">
+                    <i class="fa-solid fa-shirt"></i>
+                </span>
+
+                <span class="logo-text">
+                    Style<span>Hub</span>
+                </span>
+            </a>
+
+
+            <!-- Desktop Navigation -->
+            <nav class="nav-menu">
+
+                <a href="index.html" class="nav-link active">
+                    Home
+                </a>
+
+                <a href="products.html?category=men" class="nav-link">
+                    Men
+                </a>
+
+                <a href="products.html?category=women" class="nav-link">
+                    Women
+                </a>
+
+                <a href="products.html?category=kids" class="nav-link">
+                    Kids
+                </a>
+
+                <a href="about.html" class="nav-link">
+                    About
+                </a>
+
+                <a href="contact.html" class="nav-link">
+                    Contact
+                </a>
+
+            </nav>
+
+
+            <!-- Header Actions -->
+            <div class="nav-actions">
+
+                <!-- Search -->
+                <a href="products.html" class="nav-icon" title="Search">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </a>
+
+                <!-- Account -->
+                <a href="account.html" class="nav-icon" title="Account">
+                    <i class="fa-regular fa-user"></i>
+                </a>
+
+                <!-- Wishlist -->
+                <a href="account.html#wishlist"
+                    class="nav-icon"
+                    title="Wishlist">
+
+                    <i class="fa-regular fa-heart"></i>
+
+                    <span class="icon-count">
+                        0
+                    </span>
+
+                </a>
+
+                <!-- Cart -->
+                <a href="cart.html"
+                    class="nav-icon cart-icon"
+                    title="Shopping Cart">
+
+                    <i class="fa-solid fa-bag-shopping"></i>
+
+                    <span id="cart-count" class="icon-count">
+                        0
+                    </span>
+
+                </a>
+
+                <!-- Mobile Menu -->
+                <button
+                    class="menu-toggle"
+                    id="menu-toggle"
+                    aria-label="Open Menu">
+
+                    <i class="fa-solid fa-bars"></i>
+
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- Mobile Navigation -->
+        <div class="mobile-menu" id="mobile-menu">
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="products.html?category=men">
+                Men
+            </a>
+
+            <a href="products.html?category=women">
+                Women
+            </a>
+
+            <a href="products.html?category=kids">
+                Kids
+            </a>
+
+            <a href="about.html">
+                About
+            </a>
+
+            <a href="contact.html">
+                Contact
+            </a>
+
+            <a href="account.html">
+                My Account
+            </a>
+
+            <a href="cart.html">
+                Shopping Cart
+            </a>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =========================
+         HERO SECTION
+    ========================== -->
+
+    <main>
+
+        <section class="hero">
+
+            <div class="hero-overlay"></div>
+
+            <div class="container hero-content">
+
+                <div class="hero-text">
+
+                    <p class="hero-small-title">
+                        NEW SEASON COLLECTION
+                    </p>
+
+                    <h1>
+                        Define Your
+                        <span>Style</span>
+                    </h1>
+
+                    <p class="hero-description">
+                        Discover modern fashion designed for
+                        confidence, comfort and everyday elegance.
+                    </p>
+
+                    <div class="hero-buttons">
+
+                        <a href="products.html"
+                            class="btn btn-primary">
+
+                            Shop Now
+                            <i class="fa-solid fa-arrow-right"></i>
+
+                        </a>
+
+                        <a href="#collections"
+                            class="btn btn-outline">
+
+                            Explore Collection
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             PROMO STRIP
+        ========================== -->
+
+        <section class="promo-strip">
+
+            <div class="container promo-container">
+
+                <div class="promo-item">
+
+                    <i class="fa-solid fa-truck-fast"></i>
+
+                    <div>
+                        <strong>Free Shipping</strong>
+                        <span>On selected orders</span>
+                    </div>
+
+                </div>
+
+
+                <div class="promo-item">
+
+                    <i class="fa-solid fa-rotate-left"></i>
+
+                    <div>
+                        <strong>Easy Returns</strong>
+                        <span>Simple return process</span>
+                    </div>
+
+                </div>
+
+
+                <div class="promo-item">
+
+                    <i class="fa-solid fa-shield-halved"></i>
+
+                    <div>
+                        <strong>Secure Shopping</strong>
+                        <span>Your privacy matters</span>
+                    </div>
+
+                </div>
+
+
+                <div class="promo-item">
+
+                    <i class="fa-solid fa-headset"></i>
+
+                    <div>
+                        <strong>24/7 Support</strong>
+                        <span>We're here to help</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             COLLECTIONS
+        ========================== -->
+
+        <section class="collections section" id="collections">
+
+            <div class="container">
+
+                <div class="section-heading">
+
+                    <span class="section-label">
+                        SHOP BY CATEGORY
+                    </span>
+
+                    <h2>
+                        Find Your Perfect Style
+                    </h2>
+
+                    <p>
+                        Explore our latest collections created
+                        for every style and every occasion.
+                    </p>
+
+                </div>
+
+
+                <div class="category-grid">
+
+                    <!-- Men -->
+                    <article class="category-card men-card">
+
+                        <div class="category-image">
+
+                            <img
+                                src="images/men-category.jpg"
+                                alt="Men's Fashion Collection"
+                                loading="lazy">
+
+                        </div>
+
+                        <div class="category-content">
+
+                            <span>
+                                COLLECTION
+                            </span>
+
+                            <h3>
+                                Men's Fashion
+                            </h3>
+
+                            <p>
+                                Shirts, jeans, suits,
+                                footwear and accessories.
+                            </p>
+
+                            <a
+                                href="products.html?category=men"
+                                class="category-link">
+
+                                Shop Men
+
+                                <i class="fa-solid fa-arrow-right"></i>
+
+                            </a>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <!-- Women -->
+                    <article class="category-card women-card">
+
+                        <div class="category-image">
+
+                            <img
+                                src="images/women-category.jpg"
+                                alt="Women's Fashion Collection"
+                                loading="lazy">
+
+                        </div>
+
+                        <div class="category-content">
+
+                            <span>
+                                COLLECTION
+                            </span>
+
+                            <h3>
+                                Women's Fashion
+                            </h3>
+
+                            <p>
+                                Dresses, tops, jeans,
+                                footwear and accessories.
+                            </p>
+
+                            <a
+                                href="products.html?category=women"
+                                class="category-link">
+
+                                Shop Women
+
+                                <i class="fa-solid fa-arrow-right"></i>
+
+                            </a>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <!-- Kids -->
+                    <article class="category-card kids-card">
+
+                        <div class="category-image">
+
+                            <img
+                                src="images/kids-category.jpg"
+                                alt="Kids Fashion Collection"
+                                loading="lazy">
+
+                        </div>
+
+                        <div class="category-content">
+
+                            <span>
+                                COLLECTION
+                            </span>
+
+                            <h3>
+                                Kids' Fashion
+                            </h3>
+
+                            <p>
+                                Cute and comfortable styles
+                                for little trendsetters.
+                            </p>
+
+                            <a
+                                href="products.html?category=kids"
+                                class="category-link">
+
+                                Shop Kids
+
+                                <i class="fa-solid fa-arrow-right"></i>
+
+                            </a>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             FEATURED PRODUCTS
+        ========================== -->
+
+        <section class="featured section">
+
+            <div class="container">
+
+                <div class="section-heading section-heading-row">
+
+                    <div>
+
+                        <span class="section-label">
+                            TRENDING NOW
+                        </span>
+
+                        <h2>
+                            Featured Collection
+                        </h2>
+
+                        <p>
+                            Discover pieces that are made
+                            to elevate your everyday look.
+                        </p>
+
+                    </div>
+
+
+                    <a
+                        href="products.html"
+                        class="view-all">
+
+                        View All Products
+                        <i class="fa-solid fa-arrow-right"></i>
+
+                    </a>
+
+                </div>
+
+
+
+                <div class="product-grid">
+
+                    <!-- Product 1 -->
+                    <article class="product-card">
+
+                        <div class="product-image">
+
+                            <span class="product-badge">
+                                NEW
+                            </span>
+
+                            <button
+                                class="wishlist-btn"
+                                aria-label="Add to Wishlist">
+
+                                <i class="fa-regular fa-heart"></i>
+
+                            </button>
+
+                            <img
+                                src="images/women/floral-dress.jpg"
+                                alt="Floral Summer Dress"
+                                loading="lazy">
+
+                            <a
+                                href="product-detail.html?id=1"
+                                class="quick-view">
+
+                                Quick View
+
+                            </a>
+
+                        </div>
+
+
+                        <div class="product-info">
+
+                            <span class="product-category">
+                                Women's Collection
+                            </span>
+
+                            <h3>
+                                <a href="product-detail.html?id=1">
+                                    Floral Summer Dress
+                                </a>
+                            </h3>
+
+                            <div class="product-rating">
+
+                                <span>
+                                    ★★★★★
+                                </span>
+
+                                <small>
+                                    (24)
+                                </small>
+
+                            </div>
+
+                            <div class="product-bottom">
+
+                                <span class="price">
+                                    ₹4,199
+                                </span>
+
+                                <button
+                                    class="add-cart-btn"
+                                    data-product-id="1">
+
+                                    <i class="fa-solid fa-bag-shopping"></i>
+
+                                    Add
+
+                                </button>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <!-- Product 2 -->
+                    <article class="product-card">
+
+                        <div class="product-image">
+
+                            <span class="product-badge sale">
+                                SALE
+                            </span>
+
+                            <button
+                                class="wishlist-btn"
+                                aria-label="Add to Wishlist">
+
+                                <i class="fa-regular fa-heart"></i>
+
+                            </button>
+
+                            <img
+                                src="images/men/denim-jeans.jpg"
+                                alt="Classic Denim Jeans"
+                                loading="lazy">
+
+                            <a
+                                href="product-detail.html?id=2"
+                                class="quick-view">
+
+                                Quick View
+
+                            </a>
+
+                        </div>
+
+
+                        <div class="product-info">
+
+                            <span class="product-category">
+                                Men's Collection
+                            </span>
+
+                            <h3>
+                                <a href="product-detail.html?id=2">
+                                    Classic Denim Jeans
+                                </a>
+                            </h3>
+
+                            <div class="product-rating">
+
+                                <span>
+                                    ★★★★★
+                                </span>
+
+                                <small>
+                                    (31)
+                                </small>
+
+                            </div>
+
+                            <div class="product-bottom">
+
+                                <span class="price">
+                                    ₹3,299
+                                </span>
+
+                                <button
+                                    class="add-cart-btn"
+                                    data-product-id="2">
+
+                                    <i class="fa-solid fa-bag-shopping"></i>
+
+                                    Add
+
+                                </button>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <!-- Product 3 -->
+                    <article class="product-card">
+
+                        <div class="product-image">
+
+                            <span class="product-badge">
+                                NEW
+                            </span>
+
+                            <button
+                                class="wishlist-btn"
+                                aria-label="Add to Wishlist">
+
+                                <i class="fa-regular fa-heart"></i>
+
+                            </button>
+
+                            <img
+                                src="images/women/top.jpg"
+                                alt="Elegant Women's Top"
+                                loading="lazy">
+
+                            <a
+                                href="product-detail.html?id=3"
+                                class="quick-view">
+
+                                Quick View
+
+                            </a>
+
+                        </div>
+
+
+                        <div class="product-info">
+
+                            <span class="product-category">
+                                Women's Collection
+                            </span>
+
+                            <h3>
+                                <a href="product-detail.html?id=3">
+                                    Elegant Casual Top
+                                </a>
+                            </h3>
+
+                            <div class="product-rating">
+
+                                <span>
+                                    ★★★★★
+                                </span>
+
+                                <small>
+                                    (18)
+                                </small>
+
+                            </div>
+
+                            <div class="product-bottom">
+
+                                <span class="price">
+                                    ₹2,499
+                                </span>
+
+                                <button
+                                    class="add-cart-btn"
+                                    data-product-id="3">
+
+                                    <i class="fa-solid fa-bag-shopping"></i>
+
+                                    Add
+
+                                </button>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <!-- Product 4 -->
+                    <article class="product-card">
+
+                        <div class="product-image">
+
+                            <button
+                                class="wishlist-btn"
+                                aria-label="Add to Wishlist">
+
+                                <i class="fa-regular fa-heart"></i>
+
+                            </button>
+
+                            <img
+                                src="images/kids/kids-dress.jpg"
+                                alt="Kids Casual Dress"
+                                loading="lazy">
+
+                            <a
+                                href="product-detail.html?id=4"
+                                class="quick-view">
+
+                                Quick View
+
+                            </a>
+
+                        </div>
+
+
+                        <div class="product-info">
+
+                            <span class="product-category">
+                                Kids' Collection
+                            </span>
+
+                            <h3>
+                                <a href="product-detail.html?id=4">
+                                    Kids Casual Dress
+                                </a>
+                            </h3>
+
+                            <div class="product-rating">
+
+                                <span>
+                                    ★★★★★
+                                </span>
+
+                                <small>
+                                    (12)
+                                </small>
+
+                            </div>
+
+                            <div class="product-bottom">
+
+                                <span class="price">
+                                    ₹1,899
+                                </span>
+
+                                <button
+                                    class="add-cart-btn"
+                                    data-product-id="4">
+
+                                    <i class="fa-solid fa-bag-shopping"></i>
+
+                                    Add
+
+                                </button>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             SEASONAL OFFER
+        ========================== -->
+
+        <section class="offer-section">
+
+            <div class="container">
+
+                <div class="offer-box">
+
+                    <div class="offer-content">
+
+                        <span class="offer-label">
+                            LIMITED TIME OFFER
+                        </span>
+
+                        <h2>
+                            Up to 40% Off
+                        </h2>
+
+                        <p>
+                            Refresh your wardrobe with our
+                            seasonal collection.
+                        </p>
+
+                        <a
+                            href="products.html"
+                            class="btn btn-dark">
+
+                            Shop Sale
+                            <i class="fa-solid fa-arrow-right"></i>
+
+                        </a>
+
+                    </div>
+
+
+                    <div class="offer-decoration">
+
+                        <span>
+                            STYLE
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             WHY STYLEHUB
+        ========================== -->
+
+        <section class="why-us section">
+
+            <div class="container">
+
+                <div class="section-heading">
+
+                    <span class="section-label">
+                        WHY STYLEHUB
+                    </span>
+
+                    <h2>
+                        Fashion Made Simple
+                    </h2>
+
+                    <p>
+                        Everything you need for a stylish
+                        and effortless shopping experience.
+                    </p>
+
+                </div>
+
+
+                <div class="features-grid">
+
+                    <div class="feature-card">
+
+                        <div class="feature-icon">
+                            <i class="fa-solid fa-gem"></i>
+                        </div>
+
+                        <h3>
+                            Quality Fashion
+                        </h3>
+
+                        <p>
+                            Carefully selected styles designed
+                            for modern everyday living.
+                        </p>
+
+                    </div>
+
+
+                    <div class="feature-card">
+
+                        <div class="feature-icon">
+                            <i class="fa-solid fa-wand-magic-sparkles"></i>
+                        </div>
+
+                        <h3>
+                            Modern Styles
+                        </h3>
+
+                        <p>
+                            Discover trendy designs that help
+                            you express your personality.
+                        </p>
+
+                    </div>
+
+
+                    <div class="feature-card">
+
+                        <div class="feature-icon">
+                            <i class="fa-solid fa-heart"></i>
+                        </div>
+
+                        <h3>
+                            Made For Everyone
+                        </h3>
+
+                        <p>
+                            Fashion collections for men,
+                            women and kids.
+                        </p>
+
+                    </div>
+
+
+                    <div class="feature-card">
+
+                        <div class="feature-icon">
+                            <i class="fa-solid fa-lock"></i>
+                        </div>
+
+                        <h3>
+                            Secure Experience
+                        </h3>
+
+                        <p>
+                            Enjoy a simple and secure
+                            shopping experience.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             NEWSLETTER
+        ========================== -->
+
+        <section class="newsletter">
+
+            <div class="container newsletter-content">
+
+                <div>
+
+                    <span class="section-label">
+                        STYLE INSIDER
+                    </span>
+
+                    <h2>
+                        Get Fashion Updates
+                    </h2>
+
+                    <p>
+                        Subscribe for new collections,
+                        exclusive offers and style inspiration.
+                    </p>
+
+                </div>
+
+
+                <form
+                    class="newsletter-form"
+                    id="newsletter-form">
+
+                    <input
+                        type="email"
+                        id="newsletter-email"
+                        placeholder="Enter your email address"
+                        required>
+
+                    <button type="submit">
+                        Subscribe
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+
+                </form>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer class="footer">
+
+        <div class="container footer-grid">
+
+            <!-- Brand -->
+            <div class="footer-brand">
+
+                <a href="index.html" class="logo footer-logo">
+
+                    <span class="logo-icon">
+                        <i class="fa-solid fa-shirt"></i>
+                    </span>
+
+                    <span class="logo-text">
+                        Style<span>Hub</span>
+                    </span>
+
+                </a>
+
+                <p>
+                    Your destination for modern,
+                    stylish and comfortable fashion.
+                </p>
+
+
+                <div class="social-links">
+
+                    <a href="#" aria-label="Instagram">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+
+                    <a href="#" aria-label="Facebook">
+                        <i class="fa-brands fa-facebook-f"></i>
+                    </a>
+
+                    <a href="#" aria-label="Pinterest">
+                        <i class="fa-brands fa-pinterest-p"></i>
+                    </a>
+
+                    <a href="#" aria-label="Twitter">
+                        <i class="fa-brands fa-x-twitter"></i>
+                    </a>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- Shop -->
+            <div class="footer-column">
+
+                <h3>
+                    Shop
+                </h3>
+
+                <a href="products.html?category=men">
+                    Men
+                </a>
+
+                <a href="products.html?category=women">
+                    Women
+                </a>
+
+                <a href="products.html?category=kids">
+                    Kids
+                </a>
+
+                <a href="products.html">
+                    New Arrivals
+                </a>
+
+                <a href="products.html">
+                    Sale
+                </a>
+
+            </div>
+
+
+
+            <!-- Customer Care -->
+            <div class="footer-column">
+
+                <h3>
+                    Customer Care
+                </h3>
+
+                <a href="contact.html">
+                    Contact Us
+                </a>
+
+                <a href="account.html">
+                    My Account
+                </a>
+
+                <a href="cart.html">
+                    Shopping Cart
+                </a>
+
+                <a href="checkout.html">
+                    Checkout
+                </a>
+
+                <a href="about.html">
+                    About Us
+                </a>
+
+            </div>
+
+
+
+            <!-- Contact -->
+            <div class="footer-column">
+
+                <h3>
+                    Contact
+                </h3>
+
+                <p>
+                    <i class="fa-solid fa-location-dot"></i>
+                    Chennai, Tamil Nadu
+                </p>
+
+                <p>
+                    <i class="fa-solid fa-phone"></i>
+                    +91 98765 43210
+                </p>
+
+                <p>
+                    <i class="fa-solid fa-envelope"></i>
+                    support@stylehub.com
+                </p>
+
+                <p>
+                    <i class="fa-regular fa-clock"></i>
+                    Mon - Sat: 9 AM - 6 PM
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- Footer Bottom -->
+        <div class="footer-bottom">
+
+            <div class="container footer-bottom-content">
+
+                <p>
+                    © 2026 StyleHub. All Rights Reserved.
+                </p>
+
+                <div>
+
+                    <a href="#">
+                        Privacy Policy
+                    </a>
+
+                    <a href="#">
+                        Terms & Conditions
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+
+    <!-- =========================
+         JAVASCRIPT
+    ========================== -->
+
+    <script src="js/products.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/cart.js"></script>
+
+</body>
+</html>
