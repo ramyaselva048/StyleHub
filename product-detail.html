@@ -1,0 +1,1704 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+        content="View product details at StyleHub Fashion & Apparel.">
+
+    <title>Product Details | StyleHub</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Playfair+Display:wght@500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+
+        /* =====================================
+           PRODUCT DETAIL PAGE
+        ===================================== */
+
+        .product-detail-section {
+            padding: 70px 0 100px;
+            background: #f8f3f4;
+        }
+
+
+        /* Breadcrumb */
+
+        .breadcrumb {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 35px;
+            color: #777;
+            font-size: 11px;
+        }
+
+        .breadcrumb a:hover {
+            color: #c9a227;
+        }
+
+        .breadcrumb i {
+            font-size: 8px;
+        }
+
+
+        /* Main Product */
+
+        .product-detail {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            background: #ffffff;
+            padding: 35px;
+        }
+
+
+        /* Product Image */
+
+        .detail-image-wrapper {
+            position: relative;
+            background: #e9e1e3;
+            height: 620px;
+            overflow: hidden;
+        }
+
+        .detail-image-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .detail-badge {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            z-index: 2;
+            padding: 8px 12px;
+            background: #1a1a2e;
+            color: #ffffff;
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .detail-badge.sale {
+            background: #c9a227;
+        }
+
+
+        /* Product Info */
+
+        .detail-info {
+            padding: 15px 10px;
+        }
+
+        .detail-category {
+            color: #c9a227;
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .detail-info h1 {
+            font-family: "Playfair Display", serif;
+            font-size: clamp(35px, 4vw, 52px);
+            line-height: 1.15;
+            margin: 12px 0 15px;
+        }
+
+
+        /* Rating */
+
+        .detail-rating {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .detail-stars {
+            color: #c9a227;
+            letter-spacing: 2px;
+            font-size: 14px;
+        }
+
+        .detail-rating span {
+            color: #777;
+            font-size: 11px;
+        }
+
+
+        /* Price */
+
+        .detail-price {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding-bottom: 25px;
+            border-bottom: 1px solid #e5e5e5;
+        }
+
+        .current-price {
+            font-size: 25px;
+            font-weight: 700;
+            color: #1a1a2e;
+        }
+
+        .old-price {
+            color: #999;
+            font-size: 15px;
+            text-decoration: line-through;
+        }
+
+        .discount {
+            padding: 5px 8px;
+            background: #e9e1e3;
+            color: #c9a227;
+            font-size: 10px;
+            font-weight: 700;
+        }
+
+
+        /* Description */
+
+        .detail-description {
+            color: #777;
+            font-size: 13px;
+            line-height: 1.9;
+            margin: 25px 0;
+        }
+
+
+        /* Options */
+
+        .option-group {
+            margin-bottom: 25px;
+        }
+
+        .option-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 12px;
+        }
+
+        .option-header label {
+            font-size: 12px;
+            font-weight: 700;
+        }
+
+        .selected-option {
+            color: #c9a227;
+            font-size: 11px;
+        }
+
+
+        /* Size */
+
+        .size-options {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .size-btn {
+            min-width: 48px;
+            padding: 10px 13px;
+            border: 1px solid #ddd;
+            background: #ffffff;
+            color: #1a1a2e;
+            font-size: 11px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.3s ease;
+        }
+
+        .size-btn:hover,
+        .size-btn.active {
+            background: #1a1a2e;
+            border-color: #1a1a2e;
+            color: #ffffff;
+        }
+
+
+        /* Color */
+
+        .color-options {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .color-btn {
+            padding: 9px 15px;
+            border: 1px solid #ddd;
+            background: #ffffff;
+            font-size: 11px;
+            cursor: pointer;
+            transition: 0.3s ease;
+        }
+
+        .color-btn:hover,
+        .color-btn.active {
+            border-color: #c9a227;
+            background: #f8f3f4;
+        }
+
+
+        /* Quantity */
+
+        .quantity-row {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .quantity-box {
+            display: flex;
+            align-items: center;
+            border: 1px solid #ddd;
+        }
+
+        .quantity-box button {
+            width: 40px;
+            height: 40px;
+            border: 0;
+            background: #ffffff;
+            font-size: 18px;
+            cursor: pointer;
+        }
+
+        .quantity-box button:hover {
+            background: #e9e1e3;
+        }
+
+        .quantity-box span {
+            width: 40px;
+            text-align: center;
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+
+        /* Action Buttons */
+
+        .detail-actions {
+            display: flex;
+            gap: 12px;
+            margin-top: 30px;
+        }
+
+        .detail-add-cart {
+            flex: 1;
+            padding: 16px;
+            border: 0;
+            background: #1a1a2e;
+            color: #ffffff;
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: 0.3s ease;
+        }
+
+        .detail-add-cart:hover {
+            background: #c9a227;
+        }
+
+        .detail-wishlist {
+            width: 55px;
+            border: 1px solid #1a1a2e;
+            background: #ffffff;
+            color: #1a1a2e;
+            cursor: pointer;
+            transition: 0.3s ease;
+        }
+
+        .detail-wishlist:hover,
+        .detail-wishlist.active {
+            background: #1a1a2e;
+            color: #ffffff;
+        }
+
+
+        /* Product Benefits */
+
+        .product-benefits {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin-top: 30px;
+            padding-top: 25px;
+            border-top: 1px solid #e5e5e5;
+        }
+
+        .benefit {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .benefit i {
+            color: #c9a227;
+            font-size: 18px;
+        }
+
+        .benefit strong {
+            display: block;
+            font-size: 11px;
+        }
+
+        .benefit span {
+            display: block;
+            color: #999;
+            font-size: 9px;
+        }
+
+
+        /* Loading */
+
+        .loading-product {
+            min-height: 500px;
+            display: grid;
+            place-items: center;
+            text-align: center;
+        }
+
+
+        /* Error */
+
+        .product-error {
+            min-height: 500px;
+            display: grid;
+            place-items: center;
+            text-align: center;
+            background: #ffffff;
+            padding: 40px;
+        }
+
+        .product-error i {
+            color: #c9a227;
+            font-size: 45px;
+            margin-bottom: 15px;
+        }
+
+        .product-error h2 {
+            font-family: "Playfair Display", serif;
+            margin-bottom: 10px;
+        }
+
+        .product-error p {
+            color: #777;
+            font-size: 13px;
+            margin-bottom: 20px;
+        }
+
+
+        /* =====================================
+           RESPONSIVE
+        ===================================== */
+
+        @media (max-width: 900px) {
+
+            .product-detail {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .detail-image-wrapper {
+                height: 550px;
+            }
+
+        }
+
+
+        @media (max-width: 600px) {
+
+            .product-detail-section {
+                padding: 45px 0 70px;
+            }
+
+            .product-detail {
+                padding: 18px;
+            }
+
+            .detail-image-wrapper {
+                height: 430px;
+            }
+
+            .detail-info {
+                padding: 10px 0;
+            }
+
+            .detail-info h1 {
+                font-size: 35px;
+            }
+
+            .product-benefits {
+                grid-template-columns: 1fr;
+            }
+
+            .detail-actions {
+                flex-direction: row;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================
+         HEADER
+    ====================================== -->
+
+    <header class="header">
+
+        <div class="container navbar">
+
+            <a href="index.html" class="logo">
+
+                <span class="logo-icon">
+                    <i class="fa-solid fa-shirt"></i>
+                </span>
+
+                <span class="logo-text">
+                    Style<span>Hub</span>
+                </span>
+
+            </a>
+
+
+            <nav class="nav-menu">
+
+                <a href="index.html" class="nav-link">
+                    Home
+                </a>
+
+                <a
+                    href="products.html?category=men"
+                    class="nav-link">
+
+                    Men
+
+                </a>
+
+                <a
+                    href="products.html?category=women"
+                    class="nav-link">
+
+                    Women
+
+                </a>
+
+                <a
+                    href="products.html?category=kids"
+                    class="nav-link">
+
+                    Kids
+
+                </a>
+
+                <a href="about.html" class="nav-link">
+                    About
+                </a>
+
+                <a href="contact.html" class="nav-link">
+                    Contact
+                </a>
+
+            </nav>
+
+
+            <div class="nav-actions">
+
+                <a
+                    href="products.html"
+                    class="nav-icon">
+
+                    <i class="fa-solid fa-magnifying-glass"></i>
+
+                </a>
+
+                <a
+                    href="account.html"
+                    class="nav-icon">
+
+                    <i class="fa-regular fa-user"></i>
+
+                </a>
+
+                <a
+                    href="account.html#wishlist"
+                    class="nav-icon">
+
+                    <i class="fa-regular fa-heart"></i>
+
+                    <span class="icon-count">
+                        0
+                    </span>
+
+                </a>
+
+                <a
+                    href="cart.html"
+                    class="nav-icon">
+
+                    <i class="fa-solid fa-bag-shopping"></i>
+
+                    <span
+                        id="cart-count"
+                        class="icon-count">
+
+                        0
+
+                    </span>
+
+                </a>
+
+                <button
+                    class="menu-toggle"
+                    id="menu-toggle">
+
+                    <i class="fa-solid fa-bars"></i>
+
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <div
+            class="mobile-menu"
+            id="mobile-menu">
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="products.html?category=men">
+                Men
+            </a>
+
+            <a href="products.html?category=women">
+                Women
+            </a>
+
+            <a href="products.html?category=kids">
+                Kids
+            </a>
+
+            <a href="about.html">
+                About
+            </a>
+
+            <a href="contact.html">
+                Contact
+            </a>
+
+            <a href="account.html">
+                My Account
+            </a>
+
+            <a href="cart.html">
+                Shopping Cart
+            </a>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =====================================
+         PRODUCT DETAIL
+    ====================================== -->
+
+    <main>
+
+        <section class="product-detail-section">
+
+            <div class="container">
+
+
+                <!-- Breadcrumb -->
+
+                <div class="breadcrumb">
+
+                    <a href="index.html">
+                        Home
+                    </a>
+
+                    <i class="fa-solid fa-chevron-right"></i>
+
+                    <a href="products.html">
+                        Shop
+                    </a>
+
+                    <i class="fa-solid fa-chevron-right"></i>
+
+                    <span id="breadcrumb-product">
+                        Product
+                    </span>
+
+                </div>
+
+
+                <!-- Product Area -->
+
+                <div
+                    id="product-detail-container"
+                    class="product-detail">
+
+                    <!-- JavaScript will load product here -->
+
+                    <div class="loading-product">
+
+                        <div>
+
+                            <i
+                                class="fa-solid fa-spinner fa-spin">
+                            </i>
+
+                            <p>
+                                Loading product...
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+
+    <!-- =====================================
+         FOOTER
+    ====================================== -->
+
+    <footer class="footer">
+
+        <div class="container footer-grid">
+
+
+            <div class="footer-brand">
+
+                <a
+                    href="index.html"
+                    class="logo footer-logo">
+
+                    <span class="logo-icon">
+                        <i class="fa-solid fa-shirt"></i>
+                    </span>
+
+                    <span class="logo-text">
+                        Style<span>Hub</span>
+                    </span>
+
+                </a>
+
+                <p>
+                    Your destination for modern,
+                    stylish and comfortable fashion.
+                </p>
+
+
+                <div class="social-links">
+
+                    <a href="#">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+
+                    <a href="#">
+                        <i class="fa-brands fa-facebook-f"></i>
+                    </a>
+
+                    <a href="#">
+                        <i class="fa-brands fa-pinterest-p"></i>
+                    </a>
+
+                    <a href="#">
+                        <i class="fa-brands fa-x-twitter"></i>
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h3>
+                    Shop
+                </h3>
+
+                <a href="products.html?category=men">
+                    Men
+                </a>
+
+                <a href="products.html?category=women">
+                    Women
+                </a>
+
+                <a href="products.html?category=kids">
+                    Kids
+                </a>
+
+                <a href="products.html">
+                    New Arrivals
+                </a>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h3>
+                    Customer Care
+                </h3>
+
+                <a href="contact.html">
+                    Contact Us
+                </a>
+
+                <a href="account.html">
+                    My Account
+                </a>
+
+                <a href="cart.html">
+                    Shopping Cart
+                </a>
+
+                <a href="checkout.html">
+                    Checkout
+                </a>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h3>
+                    Contact
+                </h3>
+
+                <p>
+                    <i class="fa-solid fa-location-dot"></i>
+                    Chennai, Tamil Nadu
+                </p>
+
+                <p>
+                    <i class="fa-solid fa-phone"></i>
+                    +91 98765 43210
+                </p>
+
+                <p>
+                    <i class="fa-solid fa-envelope"></i>
+                    support@stylehub.com
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <div class="container footer-bottom-content">
+
+                <p>
+                    © 2026 StyleHub. All Rights Reserved.
+                </p>
+
+                <div>
+
+                    <a href="#">
+                        Privacy Policy
+                    </a>
+
+                    <a href="#">
+                        Terms & Conditions
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+
+    <!-- =====================================
+         JAVASCRIPT
+    ====================================== -->
+
+    <script src="js/products.js"></script>
+    <script src="js/cart.js"></script>
+    <script src="js/script.js"></script>
+
+
+    <script>
+
+        // =====================================
+        // GET PRODUCT ID FROM URL
+        // =====================================
+
+        const params =
+            new URLSearchParams(
+                window.location.search
+            );
+
+        const productId =
+            Number(
+                params.get("id")
+            );
+
+
+        // =====================================
+        // GET PRODUCT
+        // =====================================
+
+        const product =
+            getProductById(
+                productId
+            );
+
+
+        const container =
+            document.getElementById(
+                "product-detail-container"
+            );
+
+
+        const breadcrumb =
+            document.getElementById(
+                "breadcrumb-product"
+            );
+
+
+        // =====================================
+        // FORMAT PRICE
+        // =====================================
+
+        function formatDetailPrice(price) {
+
+            return new Intl.NumberFormat(
+                "en-IN",
+                {
+                    style: "currency",
+                    currency: "INR",
+                    maximumFractionDigits: 0
+                }
+            ).format(price);
+
+        }
+
+
+        // =====================================
+        // CALCULATE DISCOUNT
+        // =====================================
+
+        function getDiscount(
+            oldPrice,
+            currentPrice
+        ) {
+
+            if (
+                !oldPrice ||
+                oldPrice <= currentPrice
+            ) {
+
+                return 0;
+
+            }
+
+
+            return Math.round(
+                (
+                    (oldPrice - currentPrice)
+                    / oldPrice
+                ) * 100
+            );
+
+        }
+
+
+        // =====================================
+        // INVALID PRODUCT
+        // =====================================
+
+        if (!product) {
+
+            container.innerHTML = `
+
+                <div class="product-error">
+
+                    <div>
+
+                        <i
+                            class="fa-solid fa-shirt">
+                        </i>
+
+                        <h2>
+                            Product Not Found
+                        </h2>
+
+                        <p>
+                            Sorry, the product you are
+                            looking for does not exist.
+                        </p>
+
+                        <a
+                            href="products.html"
+                            class="btn btn-dark">
+
+                            Back To Shop
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            `;
+
+        } else {
+
+
+            // =================================
+            // BREADCRUMB
+            // =================================
+
+            breadcrumb.textContent =
+                product.name;
+
+
+            // =================================
+            // STARS
+            // =================================
+
+            let stars = "";
+
+            for (
+                let i = 1;
+                i <= 5;
+                i++
+            ) {
+
+                stars +=
+                    i <= product.rating
+                        ? "★"
+                        : "☆";
+
+            }
+
+
+            // =================================
+            // DISCOUNT
+            // =================================
+
+            const discount =
+                getDiscount(
+                    product.oldPrice,
+                    product.price
+                );
+
+
+            // =================================
+            // PRODUCT HTML
+            // =================================
+
+            container.innerHTML = `
+
+                <!-- PRODUCT IMAGE -->
+
+                <div class="detail-image-wrapper">
+
+                    ${
+                        product.badge
+                        ?
+                        `
+                        <span
+                            class="detail-badge
+                            ${
+                                product.badge === "SALE"
+                                ? "sale"
+                                : ""
+                            }">
+
+                            ${product.badge}
+
+                        </span>
+                        `
+                        :
+                        ""
+                    }
+
+
+                    <img
+                        src="${product.image}"
+                        alt="${product.name}"
+                    >
+
+                </div>
+
+
+                <!-- PRODUCT INFORMATION -->
+
+                <div class="detail-info">
+
+                    <span class="detail-category">
+
+                        ${product.category}
+                        /
+                        ${product.subcategory}
+
+                    </span>
+
+
+                    <h1>
+                        ${product.name}
+                    </h1>
+
+
+                    <!-- Rating -->
+
+                    <div class="detail-rating">
+
+                        <span class="detail-stars">
+                            ${stars}
+                        </span>
+
+                        <span>
+                            ${product.rating}.0
+                            (${product.reviews} reviews)
+                        </span>
+
+                    </div>
+
+
+                    <!-- Price -->
+
+                    <div class="detail-price">
+
+                        <span class="current-price">
+
+                            ${formatDetailPrice(
+                                product.price
+                            )}
+
+                        </span>
+
+
+                        ${
+                            product.oldPrice
+                            ?
+                            `
+                            <span class="old-price">
+
+                                ${formatDetailPrice(
+                                    product.oldPrice
+                                )}
+
+                            </span>
+                            `
+                            :
+                            ""
+                        }
+
+
+                        ${
+                            discount > 0
+                            ?
+                            `
+                            <span class="discount">
+
+                                ${discount}% OFF
+
+                            </span>
+                            `
+                            :
+                            ""
+                        }
+
+                    </div>
+
+
+                    <!-- Description -->
+
+                    <p class="detail-description">
+
+                        ${product.description}
+
+                    </p>
+
+
+                    <!-- SIZE -->
+
+                    <div class="option-group">
+
+                        <div class="option-header">
+
+                            <label>
+                                Select Size
+                            </label>
+
+                            <span
+                                class="selected-option"
+                                id="selected-size">
+
+                                ${product.sizes[0]}
+
+                            </span>
+
+                        </div>
+
+
+                        <div
+                            class="size-options"
+                            id="size-options">
+
+                            ${product.sizes.map(
+                                (size, index) => `
+
+                                <button
+                                    type="button"
+                                    class="size-btn ${
+                                        index === 0
+                                        ? "active"
+                                        : ""
+                                    }"
+                                    data-size="${size}">
+
+                                    ${size}
+
+                                </button>
+
+                            `).join("")}
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- COLOR -->
+
+                    <div class="option-group">
+
+                        <div class="option-header">
+
+                            <label>
+                                Select Color
+                            </label>
+
+                            <span
+                                class="selected-option"
+                                id="selected-color">
+
+                                ${product.colors[0]}
+
+                            </span>
+
+                        </div>
+
+
+                        <div
+                            class="color-options"
+                            id="color-options">
+
+                            ${product.colors.map(
+                                (color, index) => `
+
+                                <button
+                                    type="button"
+                                    class="color-btn ${
+                                        index === 0
+                                        ? "active"
+                                        : ""
+                                    }"
+                                    data-color="${color}">
+
+                                    ${color}
+
+                                </button>
+
+                            `).join("")}
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- QUANTITY -->
+
+                    <div class="option-group">
+
+                        <div class="option-header">
+
+                            <label>
+                                Quantity
+                            </label>
+
+                        </div>
+
+
+                        <div class="quantity-row">
+
+                            <div class="quantity-box">
+
+                                <button
+                                    type="button"
+                                    id="quantity-minus">
+
+                                    −
+
+                                </button>
+
+                                <span id="quantity">
+                                    1
+                                </span>
+
+                                <button
+                                    type="button"
+                                    id="quantity-plus">
+
+                                    +
+
+                                </button>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- ACTIONS -->
+
+                    <div class="detail-actions">
+
+                        <button
+                            type="button"
+                            class="detail-add-cart"
+                            id="detail-add-cart">
+
+                            <i
+                                class="fa-solid fa-bag-shopping">
+                            </i>
+
+                            Add To Cart
+
+                        </button>
+
+
+                        <button
+                            type="button"
+                            class="detail-wishlist"
+                            id="detail-wishlist"
+                            aria-label="Add to wishlist">
+
+                            <i
+                                class="fa-regular fa-heart">
+                            </i>
+
+                        </button>
+
+                    </div>
+
+
+                    <!-- BENEFITS -->
+
+                    <div class="product-benefits">
+
+                        <div class="benefit">
+
+                            <i
+                                class="fa-solid fa-truck-fast">
+                            </i>
+
+                            <div>
+
+                                <strong>
+                                    Fast Delivery
+                                </strong>
+
+                                <span>
+                                    Quick shipping
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="benefit">
+
+                            <i
+                                class="fa-solid fa-rotate-left">
+                            </i>
+
+                            <div>
+
+                                <strong>
+                                    Easy Returns
+                                </strong>
+
+                                <span>
+                                    Simple return process
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="benefit">
+
+                            <i
+                                class="fa-solid fa-shield-halved">
+                            </i>
+
+                            <div>
+
+                                <strong>
+                                    Secure Shopping
+                                </strong>
+
+                                <span>
+                                    Safe checkout
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="benefit">
+
+                            <i
+                                class="fa-solid fa-headset">
+                            </i>
+
+                            <div>
+
+                                <strong>
+                                    Customer Support
+                                </strong>
+
+                                <span>
+                                    We're here to help
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            `;
+
+
+            // =================================
+            // SELECTED OPTIONS
+            // =================================
+
+            let selectedSize =
+                product.sizes[0];
+
+            let selectedColor =
+                product.colors[0];
+
+            let quantity = 1;
+
+
+            // =================================
+            // SIZE BUTTONS
+            // =================================
+
+            const sizeButtons =
+                document.querySelectorAll(
+                    ".size-btn"
+                );
+
+
+            sizeButtons.forEach(button => {
+
+                button.addEventListener(
+                    "click",
+                    () => {
+
+                        sizeButtons.forEach(
+                            btn =>
+                                btn.classList.remove(
+                                    "active"
+                                )
+                        );
+
+
+                        button.classList.add(
+                            "active"
+                        );
+
+
+                        selectedSize =
+                            button.dataset.size;
+
+
+                        document
+                            .getElementById(
+                                "selected-size"
+                            )
+                            .textContent =
+                            selectedSize;
+
+                    }
+                );
+
+            });
+
+
+            // =================================
+            // COLOR BUTTONS
+            // =================================
+
+            const colorButtons =
+                document.querySelectorAll(
+                    ".color-btn"
+                );
+
+
+            colorButtons.forEach(button => {
+
+                button.addEventListener(
+                    "click",
+                    () => {
+
+                        colorButtons.forEach(
+                            btn =>
+                                btn.classList.remove(
+                                    "active"
+                                )
+                        );
+
+
+                        button.classList.add(
+                            "active"
+                        );
+
+
+                        selectedColor =
+                            button.dataset.color;
+
+
+                        document
+                            .getElementById(
+                                "selected-color"
+                            )
+                            .textContent =
+                            selectedColor;
+
+                    }
+                );
+
+            });
+
+
+            // =================================
+            // QUANTITY
+            // =================================
+
+            const quantityDisplay =
+                document.getElementById(
+                    "quantity"
+                );
+
+
+            document
+                .getElementById(
+                    "quantity-minus"
+                )
+                .addEventListener(
+                    "click",
+                    () => {
+
+                        if (quantity > 1) {
+
+                            quantity--;
+
+                            quantityDisplay
+                                .textContent =
+                                quantity;
+
+                        }
+
+                    }
+                );
+
+
+            document
+                .getElementById(
+                    "quantity-plus"
+                )
+                .addEventListener(
+                    "click",
+                    () => {
+
+                        if (quantity < 10) {
+
+                            quantity++;
+
+                            quantityDisplay
+                                .textContent =
+                                quantity;
+
+                        }
+
+                    }
+                );
+
+
+            // =================================
+            // ADD TO CART
+            // =================================
+
+            document
+                .getElementById(
+                    "detail-add-cart"
+                )
+                .addEventListener(
+                    "click",
+                    () => {
+
+                        let existingItem =
+                            cart.find(
+                                item =>
+                                    item.productId ===
+                                    product.id
+                            );
+
+
+                        if (existingItem) {
+
+                            existingItem.quantity +=
+                                quantity;
+
+                            existingItem.size =
+                                selectedSize;
+
+                            existingItem.color =
+                                selectedColor;
+
+                        } else {
+
+                            cart.push({
+
+                                productId:
+                                    product.id,
+
+                                name:
+                                    product.name,
+
+                                price:
+                                    product.price,
+
+                                image:
+                                    product.image,
+
+                                size:
+                                    selectedSize,
+
+                                color:
+                                    selectedColor,
+
+                                quantity:
+                                    quantity
+
+                            });
+
+                        }
+
+
+                        saveCart();
+
+                        updateCartCount();
+
+
+                        showNotification(
+                            `${product.name} added to cart 🛍️`
+                        );
+
+                    }
+                );
+
+
+            // =================================
+            // WISHLIST
+            // =================================
+
+            const wishlistButton =
+                document.getElementById(
+                    "detail-wishlist"
+                );
+
+
+            wishlistButton.addEventListener(
+                "click",
+                () => {
+
+                    if (
+                        typeof toggleWishlist ===
+                        "function"
+                    ) {
+
+                        toggleWishlist(
+                            product.id,
+                            wishlistButton
+                        );
+
+                    }
+
+                }
+            );
+
+
+        }
+
+    </script>
+
+</body>
+
+</html>
