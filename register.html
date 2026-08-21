@@ -1,0 +1,1370 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+        content="Create your StyleHub account.">
+
+    <title>Create Account | StyleHub</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Playfair+Display:wght@500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+
+        /* =====================================
+           REGISTER PAGE
+        ===================================== */
+
+        .register-section {
+            min-height: calc(100vh - 80px);
+            padding: 70px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #f8f3f4;
+        }
+
+        .register-wrapper {
+            width: 100%;
+            max-width: 1050px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            background: #ffffff;
+            box-shadow: 0 20px 60px rgba(26, 26, 46, 0.12);
+        }
+
+
+        /* =====================================
+           LEFT SIDE
+        ===================================== */
+
+        .register-image {
+            min-height: 700px;
+            padding: 50px;
+            display: flex;
+            align-items: flex-end;
+            position: relative;
+            overflow: hidden;
+
+            background:
+                linear-gradient(
+                    rgba(26, 26, 46, 0.55),
+                    rgba(26, 26, 46, 0.78)
+                ),
+                url("images/register.jpg")
+                center / cover no-repeat;
+        }
+
+        .register-image-content {
+            position: relative;
+            z-index: 2;
+            color: #ffffff;
+        }
+
+        .register-image-content span {
+            color: #e4c766;
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 3px;
+        }
+
+        .register-image-content h2 {
+            font-family: "Playfair Display", serif;
+            font-size: 48px;
+            line-height: 1.1;
+            margin: 12px 0;
+        }
+
+        .register-image-content p {
+            max-width: 380px;
+            color: rgba(255,255,255,0.75);
+            font-size: 12px;
+            line-height: 1.8;
+        }
+
+
+        /* =====================================
+           FORM AREA
+        ===================================== */
+
+        .register-form-area {
+            padding: 55px 50px;
+            display: flex;
+            align-items: center;
+        }
+
+        .register-form {
+            width: 100%;
+        }
+
+        .register-logo {
+            text-align: center;
+            margin-bottom: 28px;
+        }
+
+        .register-logo a {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .register-logo .logo-icon {
+            color: #c9a227;
+            font-size: 22px;
+        }
+
+        .register-logo .logo-text {
+            font-family: "Playfair Display", serif;
+            font-size: 27px;
+            font-weight: 700;
+        }
+
+
+        /* =====================================
+           HEADING
+        ===================================== */
+
+        .register-heading {
+            text-align: center;
+            margin-bottom: 28px;
+        }
+
+        .register-heading h1 {
+            font-family: "Playfair Display", serif;
+            font-size: 35px;
+            margin-bottom: 8px;
+        }
+
+        .register-heading p {
+            color: #777;
+            font-size: 11px;
+        }
+
+
+        /* =====================================
+           FORM
+        ===================================== */
+
+        .register-form-group {
+            margin-bottom: 15px;
+        }
+
+        .register-form-group label {
+            display: block;
+            margin-bottom: 7px;
+            color: #1a1a2e;
+            font-size: 10px;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        .required {
+            color: #c0392b;
+        }
+
+        .register-input-wrapper {
+            position: relative;
+        }
+
+        .register-input-wrapper > i {
+            position: absolute;
+            left: 14px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #999;
+            font-size: 13px;
+        }
+
+        .register-form-group input {
+            width: 100%;
+            padding: 13px 42px;
+            border: 1px solid #ddd;
+            outline: none;
+            background: #ffffff;
+            color: #1a1a2e;
+            font-family: "Montserrat", sans-serif;
+            font-size: 11px;
+            box-sizing: border-box;
+        }
+
+        .register-form-group input:focus {
+            border-color: #c9a227;
+        }
+
+        .register-password-toggle {
+            position: absolute;
+            right: 13px;
+            top: 50%;
+            transform: translateY(-50%);
+            border: 0;
+            background: transparent;
+            color: #999;
+            cursor: pointer;
+        }
+
+        .register-password-toggle:hover {
+            color: #c9a227;
+        }
+
+
+        /* =====================================
+           PASSWORD STRENGTH
+        ===================================== */
+
+        .password-strength {
+            height: 4px;
+            margin-top: 7px;
+            background: #eeeeee;
+            overflow: hidden;
+        }
+
+        .password-strength-bar {
+            width: 0;
+            height: 100%;
+            transition: 0.3s ease;
+        }
+
+        .password-strength-text {
+            display: block;
+            margin-top: 5px;
+            color: #999;
+            font-size: 8px;
+        }
+
+
+        /* =====================================
+           TERMS
+        ===================================== */
+
+        .terms-check {
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+            margin: 18px 0;
+            color: #777;
+            font-size: 9px;
+            line-height: 1.6;
+        }
+
+        .terms-check input {
+            margin-top: 2px;
+            accent-color: #c9a227;
+        }
+
+        .terms-check a {
+            color: #c9a227;
+            font-weight: 600;
+        }
+
+
+        /* =====================================
+           REGISTER BUTTON
+        ===================================== */
+
+        .register-button {
+            width: 100%;
+            padding: 15px;
+            border: 0;
+            background: #1a1a2e;
+            color: #ffffff;
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: 0.3s ease;
+        }
+
+        .register-button:hover {
+            background: #c9a227;
+        }
+
+
+        /* =====================================
+           MESSAGES
+        ===================================== */
+
+        .register-error,
+        .register-success {
+            display: none;
+            padding: 10px 12px;
+            margin-bottom: 15px;
+            font-size: 10px;
+        }
+
+        .register-error {
+            background: #fff1f1;
+            border: 1px solid #f0caca;
+            color: #c0392b;
+        }
+
+        .register-success {
+            background: #f1fff5;
+            border: 1px solid #c5e8d0;
+            color: #267a43;
+        }
+
+        .register-error.show,
+        .register-success.show {
+            display: block;
+        }
+
+
+        /* =====================================
+           LOGIN LINK
+        ===================================== */
+
+        .login-text {
+            text-align: center;
+            margin-top: 20px;
+            color: #777;
+            font-size: 10px;
+        }
+
+        .login-text a {
+            color: #c9a227;
+            font-weight: 700;
+        }
+
+
+        /* =====================================
+           RESPONSIVE
+        ===================================== */
+
+        @media (max-width: 850px) {
+
+            .register-wrapper {
+                grid-template-columns: 1fr;
+                max-width: 550px;
+            }
+
+            .register-image {
+                min-height: 280px;
+            }
+
+        }
+
+        @media (max-width: 500px) {
+
+            .register-section {
+                padding: 40px 15px;
+            }
+
+            .register-image {
+                min-height: 240px;
+                padding: 30px;
+            }
+
+            .register-image-content h2 {
+                font-size: 35px;
+            }
+
+            .register-form-area {
+                padding: 40px 25px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================
+         HEADER
+    ===================================== -->
+
+    <header class="header">
+
+        <div class="container navbar">
+
+            <a href="index.html" class="logo">
+
+                <span class="logo-icon">
+                    <i class="fa-solid fa-shirt"></i>
+                </span>
+
+                <span class="logo-text">
+                    Style<span>Hub</span>
+                </span>
+
+            </a>
+
+
+            <nav class="nav-menu">
+
+                <a href="index.html" class="nav-link">
+                    Home
+                </a>
+
+                <a
+                    href="products.html?category=men"
+                    class="nav-link">
+                    Men
+                </a>
+
+                <a
+                    href="products.html?category=women"
+                    class="nav-link">
+                    Women
+                </a>
+
+                <a
+                    href="products.html?category=kids"
+                    class="nav-link">
+                    Kids
+                </a>
+
+                <a href="about.html" class="nav-link">
+                    About
+                </a>
+
+                <a href="contact.html" class="nav-link">
+                    Contact
+                </a>
+
+            </nav>
+
+
+            <div class="nav-actions">
+
+                <a
+                    href="products.html"
+                    class="nav-icon">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </a>
+
+                <a
+                    href="login.html"
+                    class="nav-icon">
+                    <i class="fa-regular fa-user"></i>
+                </a>
+
+                <a
+                    href="account.html#wishlist"
+                    class="nav-icon">
+
+                    <i class="fa-regular fa-heart"></i>
+
+                    <span class="icon-count">
+                        0
+                    </span>
+
+                </a>
+
+                <a
+                    href="cart.html"
+                    class="nav-icon">
+
+                    <i class="fa-solid fa-bag-shopping"></i>
+
+                    <span
+                        id="cart-count"
+                        class="icon-count">
+                        0
+                    </span>
+
+                </a>
+
+                <button
+                    class="menu-toggle"
+                    id="menu-toggle">
+
+                    <i class="fa-solid fa-bars"></i>
+
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <div
+            class="mobile-menu"
+            id="mobile-menu">
+
+            <a href="index.html">Home</a>
+
+            <a href="products.html?category=men">
+                Men
+            </a>
+
+            <a href="products.html?category=women">
+                Women
+            </a>
+
+            <a href="products.html?category=kids">
+                Kids
+            </a>
+
+            <a href="about.html">
+                About
+            </a>
+
+            <a href="contact.html">
+                Contact
+            </a>
+
+            <a href="login.html">
+                Login
+            </a>
+
+            <a href="cart.html">
+                Shopping Cart
+            </a>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =====================================
+         REGISTER
+    ====================================== -->
+
+    <main>
+
+        <section class="register-section">
+
+            <div class="register-wrapper">
+
+
+                <!-- LEFT IMAGE -->
+
+                <div class="register-image">
+
+                    <div class="register-image-content">
+
+                        <span>
+                            JOIN STYLEHUB
+                        </span>
+
+                        <h2>
+                            Your Style.<br>
+                            Your Story.
+                        </h2>
+
+                        <p>
+                            Create your account and discover
+                            fashion collections designed for
+                            your everyday style.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- REGISTER FORM -->
+
+                <div class="register-form-area">
+
+                    <div class="register-form">
+
+
+                        <!-- Logo -->
+
+                        <div class="register-logo">
+
+                            <a href="index.html">
+
+                                <span class="logo-icon">
+                                    <i class="fa-solid fa-shirt"></i>
+                                </span>
+
+                                <span class="logo-text">
+                                    Style<span>Hub</span>
+                                </span>
+
+                            </a>
+
+                        </div>
+
+
+                        <!-- Heading -->
+
+                        <div class="register-heading">
+
+                            <h1>
+                                Create Account
+                            </h1>
+
+                            <p>
+                                Join StyleHub and start
+                                shopping your favorite looks.
+                            </p>
+
+                        </div>
+
+
+                        <!-- Messages -->
+
+                        <div
+                            class="register-error"
+                            id="register-error">
+                        </div>
+
+                        <div
+                            class="register-success"
+                            id="register-success">
+                        </div>
+
+
+                        <!-- Form -->
+
+                        <form id="register-form">
+
+
+                            <!-- NAME -->
+
+                            <div class="register-form-group">
+
+                                <label for="register-name">
+
+                                    Full Name
+                                    <span class="required">*</span>
+
+                                </label>
+
+                                <div class="register-input-wrapper">
+
+                                    <i class="fa-regular fa-user"></i>
+
+                                    <input
+                                        type="text"
+                                        id="register-name"
+                                        placeholder="Enter your full name"
+                                        required>
+
+                                </div>
+
+                            </div>
+
+
+                            <!-- EMAIL -->
+
+                            <div class="register-form-group">
+
+                                <label for="register-email">
+
+                                    Email Address
+                                    <span class="required">*</span>
+
+                                </label>
+
+                                <div class="register-input-wrapper">
+
+                                    <i class="fa-regular fa-envelope"></i>
+
+                                    <input
+                                        type="email"
+                                        id="register-email"
+                                        placeholder="Enter your email"
+                                        required>
+
+                                </div>
+
+                            </div>
+
+
+                            <!-- PHONE -->
+
+                            <div class="register-form-group">
+
+                                <label for="register-phone">
+
+                                    Phone Number
+
+                                </label>
+
+                                <div class="register-input-wrapper">
+
+                                    <i class="fa-solid fa-phone"></i>
+
+                                    <input
+                                        type="tel"
+                                        id="register-phone"
+                                        placeholder="+91 98765 43210">
+
+                                </div>
+
+                            </div>
+
+
+                            <!-- PASSWORD -->
+
+                            <div class="register-form-group">
+
+                                <label for="register-password">
+
+                                    Password
+                                    <span class="required">*</span>
+
+                                </label>
+
+                                <div class="register-input-wrapper">
+
+                                    <i class="fa-solid fa-lock"></i>
+
+                                    <input
+                                        type="password"
+                                        id="register-password"
+                                        placeholder="Create a password"
+                                        minlength="6"
+                                        required>
+
+                                    <button
+                                        type="button"
+                                        class="register-password-toggle"
+                                        id="password-toggle">
+
+                                        <i class="fa-regular fa-eye"></i>
+
+                                    </button>
+
+                                </div>
+
+
+                                <div class="password-strength">
+
+                                    <div
+                                        class="password-strength-bar"
+                                        id="strength-bar">
+                                    </div>
+
+                                </div>
+
+                                <span
+                                    class="password-strength-text"
+                                    id="strength-text">
+
+                                    Password strength
+
+                                </span>
+
+                            </div>
+
+
+                            <!-- CONFIRM PASSWORD -->
+
+                            <div class="register-form-group">
+
+                                <label for="confirm-password">
+
+                                    Confirm Password
+                                    <span class="required">*</span>
+
+                                </label>
+
+                                <div class="register-input-wrapper">
+
+                                    <i class="fa-solid fa-lock"></i>
+
+                                    <input
+                                        type="password"
+                                        id="confirm-password"
+                                        placeholder="Confirm your password"
+                                        minlength="6"
+                                        required>
+
+                                </div>
+
+                            </div>
+
+
+                            <!-- TERMS -->
+
+                            <label class="terms-check">
+
+                                <input
+                                    type="checkbox"
+                                    id="terms"
+                                    required>
+
+                                <span>
+
+                                    I agree to the
+                                    <a href="#">
+                                        Terms & Conditions
+                                    </a>
+                                    and
+                                    <a href="#">
+                                        Privacy Policy
+                                    </a>.
+
+                                </span>
+
+                            </label>
+
+
+                            <!-- SUBMIT -->
+
+                            <button
+                                type="submit"
+                                class="register-button">
+
+                                Create Account
+
+                                <i class="fa-solid fa-arrow-right"></i>
+
+                            </button>
+
+
+                        </form>
+
+
+                        <!-- LOGIN -->
+
+                        <p class="login-text">
+
+                            Already have an account?
+
+                            <a href="login.html">
+                                Login Here
+                            </a>
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+
+    <!-- =====================================
+         FOOTER
+    ====================================== -->
+
+    <footer class="footer">
+
+        <div class="container footer-grid">
+
+
+            <div class="footer-brand">
+
+                <a
+                    href="index.html"
+                    class="logo footer-logo">
+
+                    <span class="logo-icon">
+                        <i class="fa-solid fa-shirt"></i>
+                    </span>
+
+                    <span class="logo-text">
+                        Style<span>Hub</span>
+                    </span>
+
+                </a>
+
+                <p>
+                    Your destination for modern,
+                    stylish and comfortable fashion.
+                </p>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h3>Shop</h3>
+
+                <a href="products.html?category=men">
+                    Men
+                </a>
+
+                <a href="products.html?category=women">
+                    Women
+                </a>
+
+                <a href="products.html?category=kids">
+                    Kids
+                </a>
+
+                <a href="products.html">
+                    New Arrivals
+                </a>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h3>Customer Care</h3>
+
+                <a href="contact.html">
+                    Contact Us
+                </a>
+
+                <a href="login.html">
+                    Login
+                </a>
+
+                <a href="cart.html">
+                    Shopping Cart
+                </a>
+
+                <a href="checkout.html">
+                    Checkout
+                </a>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h3>Contact</h3>
+
+                <p>
+                    <i class="fa-solid fa-location-dot"></i>
+                    Chennai, Tamil Nadu
+                </p>
+
+                <p>
+                    <i class="fa-solid fa-phone"></i>
+                    +91 98765 43210
+                </p>
+
+                <p>
+                    <i class="fa-solid fa-envelope"></i>
+                    support@stylehub.com
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <div class="container footer-bottom-content">
+
+                <p>
+                    © 2026 StyleHub. All Rights Reserved.
+                </p>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+
+    <!-- =====================================
+         JAVASCRIPT
+    ====================================== -->
+
+    <script src="js/products.js"></script>
+    <script src="js/cart.js"></script>
+    <script src="js/script.js"></script>
+
+
+    <script>
+
+        // =====================================
+        // PASSWORD SHOW / HIDE
+        // =====================================
+
+        const registerPassword =
+            document.getElementById(
+                "register-password"
+            );
+
+        const passwordToggle =
+            document.getElementById(
+                "password-toggle"
+            );
+
+        passwordToggle.addEventListener(
+            "click",
+            function () {
+
+                if (
+                    registerPassword.type ===
+                    "password"
+                ) {
+
+                    registerPassword.type =
+                        "text";
+
+                    this.innerHTML =
+                        `<i class="fa-regular fa-eye-slash"></i>`;
+
+                } else {
+
+                    registerPassword.type =
+                        "password";
+
+                    this.innerHTML =
+                        `<i class="fa-regular fa-eye"></i>`;
+
+                }
+
+            }
+        );
+
+
+        // =====================================
+        // PASSWORD STRENGTH
+        // =====================================
+
+        const strengthBar =
+            document.getElementById(
+                "strength-bar"
+            );
+
+        const strengthText =
+            document.getElementById(
+                "strength-text"
+            );
+
+
+        registerPassword.addEventListener(
+            "input",
+            function () {
+
+                const password =
+                    this.value;
+
+                let strength = 0;
+
+
+                if (password.length >= 6) {
+                    strength++;
+                }
+
+                if (/[A-Z]/.test(password)) {
+                    strength++;
+                }
+
+                if (/[0-9]/.test(password)) {
+                    strength++;
+                }
+
+                if (/[^A-Za-z0-9]/.test(password)) {
+                    strength++;
+                }
+
+
+                if (!password) {
+
+                    strengthBar.style.width =
+                        "0%";
+
+                    strengthText.textContent =
+                        "Password strength";
+
+                }
+
+                else if (strength <= 1) {
+
+                    strengthBar.style.width =
+                        "25%";
+
+                    strengthText.textContent =
+                        "Weak password";
+
+                }
+
+                else if (strength === 2) {
+
+                    strengthBar.style.width =
+                        "50%";
+
+                    strengthText.textContent =
+                        "Medium password";
+
+                }
+
+                else if (strength === 3) {
+
+                    strengthBar.style.width =
+                        "75%";
+
+                    strengthText.textContent =
+                        "Good password";
+
+                }
+
+                else {
+
+                    strengthBar.style.width =
+                        "100%";
+
+                    strengthText.textContent =
+                        "Strong password";
+
+                }
+
+            }
+        );
+
+
+        // =====================================
+        // REGISTER FORM
+        // =====================================
+
+        const registerForm =
+            document.getElementById(
+                "register-form"
+            );
+
+        const registerError =
+            document.getElementById(
+                "register-error"
+            );
+
+        const registerSuccess =
+            document.getElementById(
+                "register-success"
+            );
+
+
+        registerForm.addEventListener(
+            "submit",
+            function (event) {
+
+                event.preventDefault();
+
+
+                registerError.classList.remove(
+                    "show"
+                );
+
+                registerSuccess.classList.remove(
+                    "show"
+                );
+
+
+                const name =
+                    document.getElementById(
+                        "register-name"
+                    ).value.trim();
+
+
+                const email =
+                    document.getElementById(
+                        "register-email"
+                    ).value.trim();
+
+
+                const phone =
+                    document.getElementById(
+                        "register-phone"
+                    ).value.trim();
+
+
+                const password =
+                    document.getElementById(
+                        "register-password"
+                    ).value;
+
+
+                const confirmPassword =
+                    document.getElementById(
+                        "confirm-password"
+                    ).value;
+
+
+                const terms =
+                    document.getElementById(
+                        "terms"
+                    ).checked;
+
+
+                // =================================
+                // VALIDATION
+                // =================================
+
+                if (name.length < 3) {
+
+                    showRegisterError(
+                        "Please enter your full name."
+                    );
+
+                    return;
+
+                }
+
+
+                if (!email.includes("@")) {
+
+                    showRegisterError(
+                        "Please enter a valid email address."
+                    );
+
+                    return;
+
+                }
+
+
+                if (
+                    phone &&
+                    !/^[0-9+\-\s]{10,15}$/.test(
+                        phone
+                    )
+                ) {
+
+                    showRegisterError(
+                        "Please enter a valid phone number."
+                    );
+
+                    return;
+
+                }
+
+
+                if (password.length < 6) {
+
+                    showRegisterError(
+                        "Password must contain at least 6 characters."
+                    );
+
+                    return;
+
+                }
+
+
+                if (
+                    password !==
+                    confirmPassword
+                ) {
+
+                    showRegisterError(
+                        "Passwords do not match."
+                    );
+
+                    return;
+
+                }
+
+
+                if (!terms) {
+
+                    showRegisterError(
+                        "Please accept the Terms & Conditions."
+                    );
+
+                    return;
+
+                }
+
+
+                // =================================
+                // SAVE USER - DEMO
+                // =================================
+
+                const user = {
+
+                    name: name,
+
+                    email: email,
+
+                    phone: phone,
+
+                    createdAt:
+                        new Date()
+                            .toLocaleString(
+                                "en-IN"
+                            )
+
+                };
+
+
+                localStorage.setItem(
+                    "stylehubUser",
+                    JSON.stringify(
+                        user
+                    )
+                );
+
+
+                // Save demo credentials
+
+                localStorage.setItem(
+                    "stylehubCredentials",
+                    JSON.stringify({
+
+                        email: email,
+
+                        password: password
+
+                    })
+                );
+
+
+                // Success
+
+                registerSuccess.textContent =
+                    "Account created successfully! Redirecting to login...";
+
+                registerSuccess.classList.add(
+                    "show"
+                );
+
+
+                setTimeout(
+                    () => {
+
+                        window.location.href =
+                            "login.html";
+
+                    },
+                    1500
+                );
+
+            }
+        );
+
+
+        // =====================================
+        // ERROR FUNCTION
+        // =====================================
+
+        function showRegisterError(
+            message
+        ) {
+
+            registerError.textContent =
+                message;
+
+            registerError.classList.add(
+                "show"
+            );
+
+        }
+
+    </script>
+
+</body>
+
+</html>
