@@ -1,0 +1,1310 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+        content="Your StyleHub shopping cart. Review your selected fashion products before checkout.">
+
+    <title>Shopping Cart | StyleHub</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Playfair+Display:wght@500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+
+        /* =====================================
+           CART PAGE
+        ===================================== */
+
+        .cart-section {
+            padding: 70px 0 100px;
+            background: #f8f3f4;
+            min-height: 70vh;
+        }
+
+
+        /* Cart Header */
+
+        .cart-heading {
+            text-align: center;
+            margin-bottom: 45px;
+        }
+
+        .cart-heading span {
+            color: #c9a227;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .cart-heading h1 {
+            font-family: "Playfair Display", serif;
+            font-size: clamp(40px, 5vw, 55px);
+            margin: 8px 0;
+        }
+
+        .cart-heading p {
+            color: #777;
+            font-size: 13px;
+        }
+
+
+        /* Cart Layout */
+
+        .cart-layout {
+            display: grid;
+            grid-template-columns: 1fr 350px;
+            gap: 30px;
+            align-items: start;
+        }
+
+
+        /* Cart Items */
+
+        .cart-items-wrapper {
+            background: #ffffff;
+            border: 1px solid #e5e5e5;
+        }
+
+        .cart-items-header {
+            display: grid;
+            grid-template-columns: 1fr 120px 100px 40px;
+            gap: 15px;
+            padding: 18px 25px;
+            background: #1a1a2e;
+            color: #ffffff;
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+
+        /* Dynamic Cart Items */
+
+        #cart-items {
+            width: 100%;
+        }
+
+        .cart-item {
+            display: grid;
+            grid-template-columns: 1fr 120px 100px 40px;
+            gap: 15px;
+            align-items: center;
+            padding: 25px;
+            border-bottom: 1px solid #e5e5e5;
+        }
+
+        .cart-item:last-child {
+            border-bottom: none;
+        }
+
+
+        /* Product */
+
+        .cart-product {
+            display: flex;
+            gap: 18px;
+            min-width: 0;
+        }
+
+        .cart-image {
+            width: 105px;
+            height: 125px;
+            flex-shrink: 0;
+            overflow: hidden;
+            background: #e9e1e3;
+        }
+
+        .cart-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .cart-product-info {
+            min-width: 0;
+        }
+
+        .cart-category {
+            color: #c9a227;
+            font-size: 9px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .cart-product-info h3 {
+            font-family: "Playfair Display", serif;
+            font-size: 18px;
+            margin: 5px 0 8px;
+        }
+
+        .cart-product-info p {
+            color: #777;
+            font-size: 11px;
+            margin-bottom: 12px;
+        }
+
+
+        /* Options */
+
+        .cart-options {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .cart-options label {
+            color: #777;
+            font-size: 10px;
+        }
+
+        .cart-options select {
+            margin-left: 4px;
+            padding: 5px 7px;
+            border: 1px solid #ddd;
+            background: #ffffff;
+            outline: none;
+            font-size: 10px;
+        }
+
+        .cart-options select:focus {
+            border-color: #c9a227;
+        }
+
+
+        /* Quantity */
+
+        .cart-quantity {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid #ddd;
+            width: fit-content;
+        }
+
+        .cart-quantity button {
+            width: 32px;
+            height: 34px;
+            border: 0;
+            background: #ffffff;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .cart-quantity button:hover {
+            background: #e9e1e3;
+        }
+
+        .cart-quantity span {
+            width: 35px;
+            text-align: center;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+
+        /* Item Total */
+
+        .cart-item-total {
+            text-align: right;
+        }
+
+        .cart-item-total strong {
+            font-size: 14px;
+        }
+
+
+        /* Remove */
+
+        .remove-cart {
+            border: 0;
+            background: transparent;
+            color: #999;
+            font-size: 14px;
+            cursor: pointer;
+            transition: 0.3s ease;
+        }
+
+        .remove-cart:hover {
+            color: #c0392b;
+        }
+
+
+        /* Empty Cart */
+
+        .empty-cart {
+            padding: 90px 25px;
+            text-align: center;
+        }
+
+        .empty-cart-icon {
+            width: 80px;
+            height: 80px;
+            display: grid;
+            place-items: center;
+            margin: 0 auto 20px;
+            border-radius: 50%;
+            background: #e9e1e3;
+            font-size: 30px;
+        }
+
+        .empty-cart h2 {
+            font-family: "Playfair Display", serif;
+            font-size: 30px;
+            margin-bottom: 10px;
+        }
+
+        .empty-cart p {
+            color: #777;
+            font-size: 12px;
+            margin-bottom: 25px;
+        }
+
+
+        /* =====================================
+           CART SUMMARY
+        ===================================== */
+
+        .cart-summary {
+            background: #ffffff;
+            border: 1px solid #e5e5e5;
+            padding: 30px;
+            position: sticky;
+            top: 100px;
+        }
+
+        .cart-summary h2 {
+            font-family: "Playfair Display", serif;
+            font-size: 26px;
+            margin-bottom: 25px;
+        }
+
+        .summary-row {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            padding: 12px 0;
+            color: #777;
+            font-size: 12px;
+            border-bottom: 1px solid #eeeeee;
+        }
+
+        .summary-row strong {
+            color: #1a1a2e;
+        }
+
+        .summary-total {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+            margin-top: 5px;
+        }
+
+        .summary-total span {
+            font-size: 14px;
+            font-weight: 700;
+        }
+
+        .summary-total strong {
+            color: #1a1a2e;
+            font-size: 22px;
+        }
+
+
+        /* Free Shipping Message */
+
+        .shipping-message {
+            padding: 12px;
+            margin-bottom: 20px;
+            background: #f8f3f4;
+            color: #777;
+            font-size: 10px;
+            line-height: 1.6;
+        }
+
+        .shipping-message i {
+            color: #c9a227;
+            margin-right: 5px;
+        }
+
+
+        /* Checkout */
+
+        .checkout-btn {
+            width: 100%;
+            padding: 16px;
+            border: 0;
+            background: #1a1a2e;
+            color: #ffffff;
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: 0.3s ease;
+        }
+
+        .checkout-btn:hover {
+            background: #c9a227;
+        }
+
+        .checkout-btn i {
+            margin-left: 8px;
+        }
+
+
+        /* Continue Shopping */
+
+        .continue-shopping {
+            display: block;
+            margin-top: 15px;
+            text-align: center;
+            color: #777;
+            font-size: 11px;
+            font-weight: 600;
+        }
+
+        .continue-shopping:hover {
+            color: #c9a227;
+        }
+
+
+        /* Clear Cart */
+
+        .clear-cart-btn {
+            width: 100%;
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            background: #ffffff;
+            color: #777;
+            font-size: 10px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        .clear-cart-btn:hover {
+            border-color: #c0392b;
+            color: #c0392b;
+        }
+
+
+        /* Payment Icons */
+
+        .payment-info {
+            margin-top: 25px;
+            padding-top: 20px;
+            border-top: 1px solid #e5e5e5;
+            text-align: center;
+        }
+
+        .payment-info p {
+            color: #999;
+            font-size: 9px;
+            margin-bottom: 10px;
+        }
+
+        .payment-icons {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            color: #777;
+            font-size: 20px;
+        }
+
+
+        /* =====================================
+           RESPONSIVE
+        ===================================== */
+
+        @media (max-width: 1000px) {
+
+            .cart-layout {
+                grid-template-columns: 1fr;
+            }
+
+            .cart-summary {
+                position: static;
+            }
+
+        }
+
+
+        @media (max-width: 768px) {
+
+            .cart-items-header {
+                display: none;
+            }
+
+            .cart-item {
+                grid-template-columns: 1fr auto;
+                gap: 15px;
+                padding: 20px;
+            }
+
+            .cart-product {
+                grid-column: 1 / -1;
+            }
+
+            .cart-quantity {
+                justify-self: start;
+            }
+
+            .cart-item-total {
+                text-align: right;
+            }
+
+            .remove-cart {
+                grid-column: 2;
+                grid-row: 1;
+                justify-self: end;
+            }
+
+        }
+
+
+        @media (max-width: 480px) {
+
+            .cart-section {
+                padding: 50px 0 70px;
+            }
+
+            .cart-product {
+                gap: 12px;
+            }
+
+            .cart-image {
+                width: 80px;
+                height: 100px;
+            }
+
+            .cart-product-info h3 {
+                font-size: 15px;
+            }
+
+            .cart-options {
+                flex-direction: column;
+                gap: 5px;
+            }
+
+            .cart-summary {
+                padding: 22px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================
+         HEADER
+    ====================================== -->
+
+    <header class="header">
+
+        <div class="container navbar">
+
+            <!-- Logo -->
+
+            <a href="index.html" class="logo">
+
+                <span class="logo-icon">
+                    <i class="fa-solid fa-shirt"></i>
+                </span>
+
+                <span class="logo-text">
+                    Style<span>Hub</span>
+                </span>
+
+            </a>
+
+
+            <!-- Navigation -->
+
+            <nav class="nav-menu">
+
+                <a href="index.html" class="nav-link">
+                    Home
+                </a>
+
+                <a
+                    href="products.html?category=men"
+                    class="nav-link">
+
+                    Men
+
+                </a>
+
+                <a
+                    href="products.html?category=women"
+                    class="nav-link">
+
+                    Women
+
+                </a>
+
+                <a
+                    href="products.html?category=kids"
+                    class="nav-link">
+
+                    Kids
+
+                </a>
+
+                <a href="about.html" class="nav-link">
+                    About
+                </a>
+
+                <a href="contact.html" class="nav-link">
+                    Contact
+                </a>
+
+            </nav>
+
+
+            <!-- Actions -->
+
+            <div class="nav-actions">
+
+                <a
+                    href="products.html"
+                    class="nav-icon">
+
+                    <i class="fa-solid fa-magnifying-glass"></i>
+
+                </a>
+
+                <a
+                    href="account.html"
+                    class="nav-icon">
+
+                    <i class="fa-regular fa-user"></i>
+
+                </a>
+
+                <a
+                    href="account.html#wishlist"
+                    class="nav-icon">
+
+                    <i class="fa-regular fa-heart"></i>
+
+                    <span class="icon-count">
+                        0
+                    </span>
+
+                </a>
+
+                <a
+                    href="cart.html"
+                    class="nav-icon">
+
+                    <i class="fa-solid fa-bag-shopping"></i>
+
+                    <span
+                        id="cart-count"
+                        class="icon-count">
+
+                        0
+
+                    </span>
+
+                </a>
+
+                <button
+                    class="menu-toggle"
+                    id="menu-toggle">
+
+                    <i class="fa-solid fa-bars"></i>
+
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- Mobile Menu -->
+
+        <div
+            class="mobile-menu"
+            id="mobile-menu">
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="products.html?category=men">
+                Men
+            </a>
+
+            <a href="products.html?category=women">
+                Women
+            </a>
+
+            <a href="products.html?category=kids">
+                Kids
+            </a>
+
+            <a href="about.html">
+                About
+            </a>
+
+            <a href="contact.html">
+                Contact
+            </a>
+
+            <a href="account.html">
+                My Account
+            </a>
+
+            <a href="cart.html">
+                Shopping Cart
+            </a>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =====================================
+         CART SECTION
+    ====================================== -->
+
+    <main>
+
+        <section class="cart-section">
+
+            <div class="container">
+
+
+                <!-- Heading -->
+
+                <div class="cart-heading">
+
+                    <span>
+                        YOUR SHOPPING BAG
+                    </span>
+
+                    <h1>
+                        Shopping Cart
+                    </h1>
+
+                    <p>
+                        Review your selected products
+                        before checkout.
+                    </p>
+
+                </div>
+
+
+
+                <!-- Cart Layout -->
+
+                <div class="cart-layout">
+
+
+                    <!-- =================================
+                         CART ITEMS
+                    ================================== -->
+
+                    <div class="cart-items-wrapper">
+
+
+                        <!-- Desktop Header -->
+
+                        <div class="cart-items-header">
+
+                            <span>
+                                Product
+                            </span>
+
+                            <span>
+                                Quantity
+                            </span>
+
+                            <span>
+                                Total
+                            </span>
+
+                            <span>
+                            </span>
+
+                        </div>
+
+
+                        <!-- Dynamic Cart -->
+
+                        <div id="cart-items">
+
+                            <!-- cart.js will render products here -->
+
+                            <div class="empty-cart">
+
+                                <div class="empty-cart-icon">
+                                    🛒
+                                </div>
+
+                                <h2>
+                                    Loading Cart...
+                                </h2>
+
+                            </div>
+
+                        </div>
+
+
+                    </div>
+
+
+
+                    <!-- =================================
+                         SUMMARY
+                    ================================== -->
+
+                    <aside class="cart-summary">
+
+                        <h2>
+                            Order Summary
+                        </h2>
+
+
+                        <!-- Shipping Message -->
+
+                        <div class="shipping-message">
+
+                            <i
+                                class="fa-solid fa-truck-fast">
+                            </i>
+
+                            Free shipping on orders
+                            above ₹3,000.
+
+                        </div>
+
+
+                        <!-- Subtotal -->
+
+                        <div class="summary-row">
+
+                            <span>
+                                Subtotal
+                            </span>
+
+                            <strong
+                                id="cart-subtotal">
+
+                                ₹0
+
+                            </strong>
+
+                        </div>
+
+
+                        <!-- Shipping -->
+
+                        <div class="summary-row">
+
+                            <span>
+                                Shipping
+                            </span>
+
+                            <strong
+                                id="cart-shipping">
+
+                                FREE
+
+                            </strong>
+
+                        </div>
+
+
+                        <!-- Tax -->
+
+                        <div class="summary-row">
+
+                            <span>
+                                Tax (5%)
+                            </span>
+
+                            <strong
+                                id="cart-tax">
+
+                                ₹0
+
+                            </strong>
+
+                        </div>
+
+
+                        <!-- Total -->
+
+                        <div class="summary-total">
+
+                            <span>
+                                Grand Total
+                            </span>
+
+                            <strong
+                                id="cart-total">
+
+                                ₹0
+
+                            </strong>
+
+                        </div>
+
+
+                        <!-- Checkout -->
+
+                        <button
+                            class="checkout-btn"
+                            id="checkout-button">
+
+                            Proceed To Checkout
+
+                            <i
+                                class="fa-solid fa-arrow-right">
+                            </i>
+
+                        </button>
+
+
+                        <!-- Continue Shopping -->
+
+                        <a
+                            href="products.html"
+                            class="continue-shopping">
+
+                            <i
+                                class="fa-solid fa-arrow-left">
+                            </i>
+
+                            Continue Shopping
+
+                        </a>
+
+
+                        <!-- Clear Cart -->
+
+                        <button
+                            class="clear-cart-btn"
+                            id="clear-cart-button">
+
+                            Clear Shopping Cart
+
+                        </button>
+
+
+                        <!-- Payment -->
+
+                        <div class="payment-info">
+
+                            <p>
+                                Secure payment options
+                            </p>
+
+                            <div class="payment-icons">
+
+                                <i
+                                    class="fa-brands fa-cc-visa">
+                                </i>
+
+                                <i
+                                    class="fa-brands fa-cc-mastercard">
+                                </i>
+
+                                <i
+                                    class="fa-brands fa-cc-paypal">
+                                </i>
+
+                                <i
+                                    class="fa-solid fa-building-columns">
+                                </i>
+
+                            </div>
+
+                        </div>
+
+                    </aside>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+
+    <!-- =====================================
+         FOOTER
+    ====================================== -->
+
+    <footer class="footer">
+
+        <div class="container footer-grid">
+
+
+            <!-- Brand -->
+
+            <div class="footer-brand">
+
+                <a
+                    href="index.html"
+                    class="logo footer-logo">
+
+                    <span class="logo-icon">
+                        <i class="fa-solid fa-shirt"></i>
+                    </span>
+
+                    <span class="logo-text">
+                        Style<span>Hub</span>
+                    </span>
+
+                </a>
+
+                <p>
+                    Your destination for modern,
+                    stylish and comfortable fashion.
+                </p>
+
+
+                <div class="social-links">
+
+                    <a href="#">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+
+                    <a href="#">
+                        <i class="fa-brands fa-facebook-f"></i>
+                    </a>
+
+                    <a href="#">
+                        <i class="fa-brands fa-pinterest-p"></i>
+                    </a>
+
+                    <a href="#">
+                        <i class="fa-brands fa-x-twitter"></i>
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- Shop -->
+
+            <div class="footer-column">
+
+                <h3>
+                    Shop
+                </h3>
+
+                <a href="products.html?category=men">
+                    Men
+                </a>
+
+                <a href="products.html?category=women">
+                    Women
+                </a>
+
+                <a href="products.html?category=kids">
+                    Kids
+                </a>
+
+                <a href="products.html">
+                    New Arrivals
+                </a>
+
+                <a href="products.html">
+                    Sale
+                </a>
+
+            </div>
+
+
+            <!-- Customer Care -->
+
+            <div class="footer-column">
+
+                <h3>
+                    Customer Care
+                </h3>
+
+                <a href="contact.html">
+                    Contact Us
+                </a>
+
+                <a href="account.html">
+                    My Account
+                </a>
+
+                <a href="cart.html">
+                    Shopping Cart
+                </a>
+
+                <a href="checkout.html">
+                    Checkout
+                </a>
+
+                <a href="about.html">
+                    About Us
+                </a>
+
+            </div>
+
+
+            <!-- Contact -->
+
+            <div class="footer-column">
+
+                <h3>
+                    Contact
+                </h3>
+
+                <p>
+                    <i class="fa-solid fa-location-dot"></i>
+                    Chennai, Tamil Nadu
+                </p>
+
+                <p>
+                    <i class="fa-solid fa-phone"></i>
+                    +91 98765 43210
+                </p>
+
+                <p>
+                    <i class="fa-solid fa-envelope"></i>
+                    support@stylehub.com
+                </p>
+
+                <p>
+                    <i class="fa-regular fa-clock"></i>
+                    Mon - Sat: 9 AM - 6 PM
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- Footer Bottom -->
+
+        <div class="footer-bottom">
+
+            <div class="container footer-bottom-content">
+
+                <p>
+                    © 2026 StyleHub. All Rights Reserved.
+                </p>
+
+                <div>
+
+                    <a href="#">
+                        Privacy Policy
+                    </a>
+
+                    <a href="#">
+                        Terms & Conditions
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+
+    <!-- =====================================
+         JAVASCRIPT
+    ====================================== -->
+
+    <!-- IMPORTANT:
+         Keep this order
+    -->
+
+    <script src="js/products.js"></script>
+
+    <script src="js/cart.js"></script>
+
+    <script src="js/script.js"></script>
+
+
+    <!-- Cart Page Controls -->
+
+    <script>
+
+        // =====================================
+        // CHECKOUT BUTTON - FIXED
+        // =====================================
+
+        const checkoutButton =
+            document.getElementById(
+                "checkout-button"
+            );
+
+
+        if (checkoutButton) {
+
+            checkoutButton.addEventListener(
+                "click",
+                function () {
+
+                    let savedCart = [];
+
+                    try {
+
+                        savedCart =
+                            JSON.parse(
+                                localStorage.getItem(
+                                    "stylehubCart"
+                                )
+                            ) || [];
+
+                    } catch (error) {
+
+                        console.error(
+                            "Cart data error:",
+                            error
+                        );
+
+                        savedCart = [];
+
+                    }
+
+
+                    if (
+                        !Array.isArray(savedCart) ||
+                        savedCart.length === 0
+                    ) {
+
+                        if (
+                            typeof showNotification ===
+                            "function"
+                        ) {
+
+                            showNotification(
+                                "Your cart is empty. Add a product first."
+                            );
+
+                        } else {
+
+                            alert(
+                                "Your cart is empty. Add a product first."
+                            );
+
+                        }
+
+                        return;
+
+                    }
+
+
+                    console.log(
+                        "Checkout cart:",
+                        savedCart
+                    );
+
+
+                    window.location.href =
+                        "checkout.html";
+
+                }
+            );
+
+        }
+
+
+
+        // =====================================
+        // CLEAR CART
+        // =====================================
+
+        const clearCartButton =
+            document.getElementById(
+                "clear-cart-button"
+            );
+
+
+        clearCartButton.addEventListener(
+            "click",
+            function () {
+
+                if (
+                    typeof clearCart ===
+                    "function"
+                ) {
+
+                    clearCart();
+
+                }
+
+            }
+        );
+
+
+
+        // =====================================
+        // INITIALIZE
+        // =====================================
+
+        document.addEventListener(
+            "DOMContentLoaded",
+            function () {
+
+                if (
+                    typeof renderCart ===
+                    "function"
+                ) {
+
+                    renderCart();
+
+                }
+
+                if (
+                    typeof updateCartCount ===
+                    "function"
+                ) {
+
+                    updateCartCount();
+
+                }
+
+            }
+        );
+
+    </script>
+
+</body>
+
+</html>
