@@ -1,0 +1,1522 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+        content="Login to your StyleHub account.">
+
+    <title>Login | StyleHub</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Playfair+Display:wght@500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="css/style.css">
+
+
+    <style>
+
+        /* =====================================
+           LOGIN PAGE
+        ===================================== */
+
+        .auth-section {
+            min-height: calc(100vh - 80px);
+            padding: 70px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background:
+                linear-gradient(
+                    rgba(26, 26, 46, 0.08),
+                    rgba(26, 26, 46, 0.08)
+                ),
+                #f8f3f4;
+        }
+
+
+        .auth-wrapper {
+            width: 100%;
+            max-width: 1050px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            background: #ffffff;
+            box-shadow:
+                0 20px 60px
+                rgba(26, 26, 46, 0.12);
+        }
+
+
+        /* =====================================
+           LEFT SIDE
+        ===================================== */
+
+        .auth-image {
+            min-height: 650px;
+            padding: 50px;
+            display: flex;
+            align-items: flex-end;
+            position: relative;
+            overflow: hidden;
+
+            background:
+                linear-gradient(
+                    rgba(26, 26, 46, 0.55),
+                    rgba(26, 26, 46, 0.75)
+                ),
+                url("images/login.jpg")
+                center / cover no-repeat;
+        }
+
+
+        .auth-image-content {
+            position: relative;
+            z-index: 2;
+            color: #ffffff;
+        }
+
+
+        .auth-image-content span {
+            color: #e4c766;
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
+
+        .auth-image-content h2 {
+            font-family: "Playfair Display", serif;
+            font-size: 48px;
+            line-height: 1.1;
+            margin: 12px 0;
+        }
+
+
+        .auth-image-content p {
+            max-width: 380px;
+            color: rgba(255,255,255,0.75);
+            font-size: 12px;
+            line-height: 1.8;
+        }
+
+
+        /* =====================================
+           RIGHT SIDE
+        ===================================== */
+
+        .auth-form-area {
+            padding: 60px 50px;
+            display: flex;
+            align-items: center;
+        }
+
+
+        .auth-form {
+            width: 100%;
+        }
+
+
+        .auth-logo {
+            text-align: center;
+            margin-bottom: 35px;
+        }
+
+
+        .auth-logo a {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+
+        .auth-logo .logo-icon {
+            color: #c9a227;
+            font-size: 22px;
+        }
+
+
+        .auth-logo .logo-text {
+            font-family: "Playfair Display", serif;
+            font-size: 27px;
+            font-weight: 700;
+        }
+
+
+        .auth-heading {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+
+        .auth-heading h1 {
+            font-family: "Playfair Display", serif;
+            font-size: 35px;
+            margin-bottom: 8px;
+        }
+
+
+        .auth-heading p {
+            color: #777;
+            font-size: 11px;
+        }
+
+
+        /* =====================================
+           FORM
+        ===================================== */
+
+        .login-form-group {
+            margin-bottom: 18px;
+        }
+
+
+        .login-form-group label {
+            display: block;
+            margin-bottom: 7px;
+            color: #1a1a2e;
+            font-size: 10px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+
+        .input-wrapper {
+            position: relative;
+        }
+
+
+        .input-wrapper > i {
+            position: absolute;
+            left: 14px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #999;
+            font-size: 13px;
+        }
+
+
+        .login-form-group input {
+            width: 100%;
+            padding: 14px 42px;
+            border: 1px solid #ddd;
+            outline: none;
+            background: #ffffff;
+            color: #1a1a2e;
+            font-family: "Montserrat", sans-serif;
+            font-size: 11px;
+            box-sizing: border-box;
+        }
+
+
+        .login-form-group input:focus {
+            border-color: #c9a227;
+        }
+
+
+        .password-toggle {
+            position: absolute;
+            right: 13px;
+            top: 50%;
+            transform: translateY(-50%);
+            border: 0;
+            background: transparent;
+            color: #999;
+            cursor: pointer;
+        }
+
+
+        .password-toggle:hover {
+            color: #c9a227;
+        }
+
+
+        /* =====================================
+           OPTIONS
+        ===================================== */
+
+        .login-options {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 5px 0 22px;
+        }
+
+
+        .remember-me {
+            display: flex;
+            align-items: center;
+            gap: 7px;
+            color: #777;
+            font-size: 10px;
+        }
+
+
+        .remember-me input {
+            accent-color: #c9a227;
+        }
+
+
+        .forgot-password {
+            color: #c9a227;
+            font-size: 10px;
+            font-weight: 600;
+        }
+
+
+        .forgot-password:hover {
+            text-decoration: underline;
+        }
+
+
+        /* =====================================
+           LOGIN BUTTON
+        ===================================== */
+
+        .login-button {
+            width: 100%;
+            padding: 15px;
+            border: 0;
+            background: #1a1a2e;
+            color: #ffffff;
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            cursor: pointer;
+            transition: 0.3s ease;
+        }
+
+
+        .login-button:hover {
+            background: #c9a227;
+        }
+
+
+        /* =====================================
+           DIVIDER
+        ===================================== */
+
+        .auth-divider {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin: 25px 0;
+            color: #999;
+            font-size: 9px;
+        }
+
+
+        .auth-divider::before,
+        .auth-divider::after {
+            content: "";
+            flex: 1;
+            height: 1px;
+            background: #e5e5e5;
+        }
+
+
+        /* =====================================
+           SOCIAL LOGIN
+        ===================================== */
+
+        .social-login {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+        }
+
+
+        .social-login button {
+            padding: 12px;
+            border: 1px solid #ddd;
+            background: #ffffff;
+            color: #1a1a2e;
+            font-size: 10px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+
+        .social-login button:hover {
+            border-color: #c9a227;
+        }
+
+
+        .social-login i {
+            margin-right: 6px;
+        }
+
+
+        /* =====================================
+           REGISTER LINK
+        ===================================== */
+
+        .register-text {
+            text-align: center;
+            margin-top: 25px;
+            color: #777;
+            font-size: 10px;
+        }
+
+
+        .register-text a {
+            color: #c9a227;
+            font-weight: 700;
+        }
+
+
+        /* =====================================
+           ERROR
+        ===================================== */
+
+        .login-error {
+            display: none;
+            padding: 10px 12px;
+            margin-bottom: 15px;
+            background: #fff1f1;
+            border: 1px solid #f0caca;
+            color: #c0392b;
+            font-size: 10px;
+        }
+
+
+        .login-error.show {
+            display: block;
+        }
+
+
+        /* =====================================
+           SUCCESS
+        ===================================== */
+
+        .login-success {
+            display: none;
+            padding: 10px 12px;
+            margin-bottom: 15px;
+            background: #f1fff5;
+            border: 1px solid #c5e8d0;
+            color: #267a43;
+            font-size: 10px;
+        }
+
+
+        .login-success.show {
+            display: block;
+        }
+
+
+        /* =====================================
+           RESPONSIVE
+        ===================================== */
+
+        @media (max-width: 850px) {
+
+            .auth-wrapper {
+                grid-template-columns: 1fr;
+                max-width: 550px;
+            }
+
+
+            .auth-image {
+                min-height: 300px;
+            }
+
+        }
+
+
+        @media (max-width: 500px) {
+
+            .auth-section {
+                padding: 40px 15px;
+            }
+
+
+            .auth-image {
+                min-height: 250px;
+                padding: 30px;
+            }
+
+
+            .auth-image-content h2 {
+                font-size: 35px;
+            }
+
+
+            .auth-form-area {
+                padding: 40px 25px;
+            }
+
+
+            .social-login {
+                grid-template-columns: 1fr;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================
+         HEADER
+    ====================================== -->
+
+    <header class="header">
+
+        <div class="container navbar">
+
+
+            <!-- Logo -->
+
+            <a
+                href="index.html"
+                class="logo">
+
+                <span class="logo-icon">
+
+                    <i class="fa-solid fa-shirt"></i>
+
+                </span>
+
+                <span class="logo-text">
+
+                    Style<span>Hub</span>
+
+                </span>
+
+            </a>
+
+
+            <!-- Navigation -->
+
+            <nav class="nav-menu">
+
+                <a
+                    href="index.html"
+                    class="nav-link">
+
+                    Home
+
+                </a>
+
+                <a
+                    href="products.html?category=men"
+                    class="nav-link">
+
+                    Men
+
+                </a>
+
+                <a
+                    href="products.html?category=women"
+                    class="nav-link">
+
+                    Women
+
+                </a>
+
+                <a
+                    href="products.html?category=kids"
+                    class="nav-link">
+
+                    Kids
+
+                </a>
+
+                <a
+                    href="about.html"
+                    class="nav-link">
+
+                    About
+
+                </a>
+
+                <a
+                    href="contact.html"
+                    class="nav-link">
+
+                    Contact
+
+                </a>
+
+            </nav>
+
+
+            <!-- Actions -->
+
+            <div class="nav-actions">
+
+                <a
+                    href="products.html"
+                    class="nav-icon">
+
+                    <i
+                        class="fa-solid fa-magnifying-glass">
+                    </i>
+
+                </a>
+
+
+                <a
+                    href="login.html"
+                    class="nav-icon">
+
+                    <i
+                        class="fa-regular fa-user">
+                    </i>
+
+                </a>
+
+
+                <a
+                    href="account.html#wishlist"
+                    class="nav-icon">
+
+                    <i
+                        class="fa-regular fa-heart">
+                    </i>
+
+                    <span class="icon-count">
+                        0
+                    </span>
+
+                </a>
+
+
+                <a
+                    href="cart.html"
+                    class="nav-icon">
+
+                    <i
+                        class="fa-solid fa-bag-shopping">
+                    </i>
+
+                    <span
+                        id="cart-count"
+                        class="icon-count">
+
+                        0
+
+                    </span>
+
+                </a>
+
+
+                <button
+                    class="menu-toggle"
+                    id="menu-toggle">
+
+                    <i
+                        class="fa-solid fa-bars">
+                    </i>
+
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- Mobile Menu -->
+
+        <div
+            class="mobile-menu"
+            id="mobile-menu">
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="products.html?category=men">
+                Men
+            </a>
+
+            <a href="products.html?category=women">
+                Women
+            </a>
+
+            <a href="products.html?category=kids">
+                Kids
+            </a>
+
+            <a href="about.html">
+                About
+            </a>
+
+            <a href="contact.html">
+                Contact
+            </a>
+
+            <a href="login.html">
+                Login
+            </a>
+
+            <a href="cart.html">
+                Shopping Cart
+            </a>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =====================================
+         LOGIN SECTION
+    ====================================== -->
+
+    <main>
+
+        <section class="auth-section">
+
+
+            <div class="auth-wrapper">
+
+
+                <!-- =================================
+                     LEFT IMAGE
+                ================================== -->
+
+                <div class="auth-image">
+
+                    <div class="auth-image-content">
+
+                        <span>
+                            WELCOME TO STYLEHUB
+                        </span>
+
+                        <h2>
+                            Style That<br>
+                            Speaks For You.
+                        </h2>
+
+                        <p>
+                            Discover your personal style
+                            with our curated collection of
+                            modern fashion for every occasion.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- =================================
+                     LOGIN FORM
+                ================================== -->
+
+                <div class="auth-form-area">
+
+                    <div class="auth-form">
+
+
+                        <!-- Logo -->
+
+                        <div class="auth-logo">
+
+                            <a href="index.html">
+
+                                <span class="logo-icon">
+
+                                    <i
+                                        class="fa-solid fa-shirt">
+                                    </i>
+
+                                </span>
+
+                                <span class="logo-text">
+
+                                    Style<span>Hub</span>
+
+                                </span>
+
+                            </a>
+
+                        </div>
+
+
+                        <!-- Heading -->
+
+                        <div class="auth-heading">
+
+                            <h1>
+                                Welcome Back
+                            </h1>
+
+                            <p>
+                                Login to continue your
+                                StyleHub journey.
+                            </p>
+
+                        </div>
+
+
+                        <!-- Error -->
+
+                        <div
+                            class="login-error"
+                            id="login-error">
+
+                        </div>
+
+
+                        <!-- Success -->
+
+                        <div
+                            class="login-success"
+                            id="login-success">
+
+                        </div>
+
+
+                        <!-- Form -->
+
+                        <form
+                            id="login-form">
+
+
+                            <!-- Email -->
+
+                            <div
+                                class="login-form-group">
+
+                                <label for="login-email">
+
+                                    Email Address
+
+                                </label>
+
+
+                                <div
+                                    class="input-wrapper">
+
+                                    <i
+                                        class="fa-regular fa-envelope">
+                                    </i>
+
+                                    <input
+                                        type="email"
+                                        id="login-email"
+                                        placeholder="Enter your email"
+                                        required>
+
+                                </div>
+
+                            </div>
+
+
+
+                            <!-- Password -->
+
+                            <div
+                                class="login-form-group">
+
+                                <label for="login-password">
+
+                                    Password
+
+                                </label>
+
+
+                                <div
+                                    class="input-wrapper">
+
+                                    <i
+                                        class="fa-solid fa-lock">
+                                    </i>
+
+                                    <input
+                                        type="password"
+                                        id="login-password"
+                                        placeholder="Enter your password"
+                                        required>
+
+                                    <button
+                                        type="button"
+                                        class="password-toggle"
+                                        id="password-toggle">
+
+                                        <i
+                                            class="fa-regular fa-eye">
+                                        </i>
+
+                                    </button>
+
+                                </div>
+
+                            </div>
+
+
+
+                            <!-- Options -->
+
+                            <div class="login-options">
+
+                                <label
+                                    class="remember-me">
+
+                                    <input
+                                        type="checkbox"
+                                        id="remember-me">
+
+                                    Remember me
+
+                                </label>
+
+
+                                <a
+                                    href="#"
+                                    class="forgot-password"
+                                    id="forgot-password">
+
+                                    Forgot Password?
+
+                                </a>
+
+                            </div>
+
+
+
+                            <!-- Login -->
+
+                            <button
+                                type="submit"
+                                class="login-button">
+
+                                Login
+
+                                <i
+                                    class="fa-solid fa-arrow-right">
+                                </i>
+
+                            </button>
+
+
+                        </form>
+
+
+
+                        <!-- Divider -->
+
+                        <div class="auth-divider">
+
+                            OR CONTINUE WITH
+
+                        </div>
+
+
+
+                        <!-- Social -->
+
+                        <div class="social-login">
+
+                            <button
+                                type="button"
+                                id="google-login">
+
+                                <i
+                                    class="fa-brands fa-google">
+                                </i>
+
+                                Google
+
+                            </button>
+
+
+                            <button
+                                type="button"
+                                id="facebook-login">
+
+                                <i
+                                    class="fa-brands fa-facebook-f">
+                                </i>
+
+                                Facebook
+
+                            </button>
+
+                        </div>
+
+
+
+                        <!-- Register -->
+
+                        <p class="register-text">
+
+                            Don't have an account?
+
+                            <a href="register.html">
+
+                                Create Account
+
+                            </a>
+
+                        </p>
+
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+
+    <!-- =====================================
+         FOOTER
+    ====================================== -->
+
+    <footer class="footer">
+
+        <div class="container footer-grid">
+
+
+            <div class="footer-brand">
+
+                <a
+                    href="index.html"
+                    class="logo footer-logo">
+
+                    <span class="logo-icon">
+
+                        <i
+                            class="fa-solid fa-shirt">
+                        </i>
+
+                    </span>
+
+                    <span class="logo-text">
+
+                        Style<span>Hub</span>
+
+                    </span>
+
+                </a>
+
+
+                <p>
+                    Your destination for modern,
+                    stylish and comfortable fashion.
+                </p>
+
+
+                <div class="social-links">
+
+                    <a href="#">
+                        <i
+                            class="fa-brands fa-instagram">
+                        </i>
+                    </a>
+
+                    <a href="#">
+                        <i
+                            class="fa-brands fa-facebook-f">
+                        </i>
+                    </a>
+
+                    <a href="#">
+                        <i
+                            class="fa-brands fa-pinterest-p">
+                        </i>
+                    </a>
+
+                    <a href="#">
+                        <i
+                            class="fa-brands fa-x-twitter">
+                        </i>
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h3>
+                    Shop
+                </h3>
+
+                <a href="products.html?category=men">
+                    Men
+                </a>
+
+                <a href="products.html?category=women">
+                    Women
+                </a>
+
+                <a href="products.html?category=kids">
+                    Kids
+                </a>
+
+                <a href="products.html">
+                    New Arrivals
+                </a>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h3>
+                    Customer Care
+                </h3>
+
+                <a href="contact.html">
+                    Contact Us
+                </a>
+
+                <a href="account.html">
+                    My Account
+                </a>
+
+                <a href="cart.html">
+                    Shopping Cart
+                </a>
+
+                <a href="checkout.html">
+                    Checkout
+                </a>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h3>
+                    Contact
+                </h3>
+
+                <p>
+                    <i
+                        class="fa-solid fa-location-dot">
+                    </i>
+
+                    Chennai, Tamil Nadu
+
+                </p>
+
+                <p>
+
+                    <i
+                        class="fa-solid fa-phone">
+                    </i>
+
+                    +91 98765 43210
+
+                </p>
+
+                <p>
+
+                    <i
+                        class="fa-solid fa-envelope">
+                    </i>
+
+                    support@stylehub.com
+
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <div
+                class="container footer-bottom-content">
+
+                <p>
+                    © 2026 StyleHub. All Rights Reserved.
+                </p>
+
+                <div>
+
+                    <a href="#">
+                        Privacy Policy
+                    </a>
+
+                    <a href="#">
+                        Terms & Conditions
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+
+    <!-- =====================================
+         JAVASCRIPT
+    ====================================== -->
+
+    <script src="js/products.js"></script>
+    <script src="js/cart.js"></script>
+    <script src="js/script.js"></script>
+
+
+    <script>
+
+        // =====================================
+        // PASSWORD SHOW / HIDE
+        // =====================================
+
+        const passwordInput =
+            document.getElementById(
+                "login-password"
+            );
+
+        const passwordToggle =
+            document.getElementById(
+                "password-toggle"
+            );
+
+
+        passwordToggle.addEventListener(
+            "click",
+            function () {
+
+                if (
+                    passwordInput.type ===
+                    "password"
+                ) {
+
+                    passwordInput.type =
+                        "text";
+
+                    this.innerHTML =
+                        `
+                        <i class="fa-regular fa-eye-slash"></i>
+                        `;
+
+                } else {
+
+                    passwordInput.type =
+                        "password";
+
+                    this.innerHTML =
+                        `
+                        <i class="fa-regular fa-eye"></i>
+                        `;
+
+                }
+
+            }
+        );
+
+
+
+        // =====================================
+        // LOGIN FORM
+        // =====================================
+
+        const loginForm =
+            document.getElementById(
+                "login-form"
+            );
+
+
+        const loginError =
+            document.getElementById(
+                "login-error"
+            );
+
+
+        const loginSuccess =
+            document.getElementById(
+                "login-success"
+            );
+
+
+        loginForm.addEventListener(
+            "submit",
+            function (event) {
+
+                event.preventDefault();
+
+
+                loginError.classList.remove(
+                    "show"
+                );
+
+                loginSuccess.classList.remove(
+                    "show"
+                );
+
+
+                const email =
+                    document.getElementById(
+                        "login-email"
+                    ).value.trim();
+
+
+                const password =
+                    document.getElementById(
+                        "login-password"
+                    ).value;
+
+
+                const rememberMe =
+                    document.getElementById(
+                        "remember-me"
+                    ).checked;
+
+
+                // Basic validation
+
+                if (!email) {
+
+                    showLoginError(
+                        "Please enter your email address."
+                    );
+
+                    return;
+
+                }
+
+
+                if (!email.includes("@")) {
+
+                    showLoginError(
+                        "Please enter a valid email address."
+                    );
+
+                    return;
+
+                }
+
+
+                if (
+                    password.length < 6
+                ) {
+
+                    showLoginError(
+                        "Password must contain at least 6 characters."
+                    );
+
+                    return;
+
+                }
+
+
+                // =================================
+                // DEMO LOGIN
+                // =================================
+
+                const userData = {
+
+                    email: email,
+
+                    loggedIn: true,
+
+                    loginTime:
+                        new Date()
+                            .toLocaleString(
+                                "en-IN"
+                            )
+
+                };
+
+
+                localStorage.setItem(
+                    "stylehubUser",
+                    JSON.stringify(
+                        userData
+                    )
+                );
+
+
+                if (rememberMe) {
+
+                    localStorage.setItem(
+                        "stylehubRemember",
+                        "true"
+                    );
+
+                } else {
+
+                    localStorage.removeItem(
+                        "stylehubRemember"
+                    );
+
+                }
+
+
+                loginSuccess.textContent =
+                    "Login successful! Redirecting...";
+
+                loginSuccess.classList.add(
+                    "show"
+                );
+
+
+                setTimeout(
+                    () => {
+
+                        window.location.href =
+                            "account.html";
+
+                    },
+                    1000
+                );
+
+            }
+        );
+
+
+
+        // =====================================
+        // ERROR FUNCTION
+        // =====================================
+
+        function showLoginError(message) {
+
+            loginError.textContent =
+                message;
+
+            loginError.classList.add(
+                "show"
+            );
+
+        }
+
+
+
+        // =====================================
+        // FORGOT PASSWORD
+        // =====================================
+
+        document
+            .getElementById(
+                "forgot-password"
+            )
+            .addEventListener(
+                "click",
+                function (event) {
+
+                    event.preventDefault();
+
+
+                    const email =
+                        document.getElementById(
+                            "login-email"
+                        ).value.trim();
+
+
+                    if (!email) {
+
+                        showLoginError(
+                            "Enter your email first to reset your password."
+                        );
+
+                        return;
+
+                    }
+
+
+                    if (
+                        !email.includes("@")
+                    ) {
+
+                        showLoginError(
+                            "Please enter a valid email address."
+                        );
+
+                        return;
+
+                    }
+
+
+                    loginSuccess.textContent =
+                        "Password reset link sent to your email. (Demo)";
+
+                    loginSuccess.classList.add(
+                        "show"
+                    );
+
+                }
+            );
+
+
+
+        // =====================================
+        // GOOGLE LOGIN
+        // =====================================
+
+        document
+            .getElementById(
+                "google-login"
+            )
+            .addEventListener(
+                "click",
+                function () {
+
+                    loginSuccess.textContent =
+                        "Google login is available in the demo UI. Connect Firebase to enable real authentication.";
+
+                    loginSuccess.classList.add(
+                        "show"
+                    );
+
+                }
+            );
+
+
+
+        // =====================================
+        // FACEBOOK LOGIN
+        // =====================================
+
+        document
+            .getElementById(
+                "facebook-login"
+            )
+            .addEventListener(
+                "click",
+                function () {
+
+                    loginSuccess.textContent =
+                        "Facebook login is available in the demo UI. Connect Firebase to enable real authentication.";
+
+                    loginSuccess.classList.add(
+                        "show"
+                    );
+
+                }
+            );
+
+    </script>
+
+</body>
+
+</html>
